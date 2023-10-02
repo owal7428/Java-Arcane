@@ -2,10 +2,10 @@
 # project-3-arcane
 
 Team Members:
-1. Name
-2. Name
+1. Owen Allison
+2. Sriyans
 
-Java Version:
+Java Version: OpenJDK 17
 
 Additional Comments/Assumptions:
 
