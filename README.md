@@ -5,7 +5,7 @@ Team Members:
 1. Owen Allison
 2. Sriyans
 
-Java Version: OpenJDK 17
+Java Version: OpenJDK 21
 
 Additional Comments/Assumptions:
 
