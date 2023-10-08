@@ -8,7 +8,7 @@ import ooad.arcane.Creature.Aquarids;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Creature.Fireborns;
 import ooad.arcane.Creature.Terravores;
-import ooad.arcane.Floor.ElementalFloor;
+import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.FloorManager;
 
@@ -19,10 +19,10 @@ public class GameBoard {
     public void Render(int turn, FloorManager floorManager) {
         System.out.println("----------Turn-" + turn  + "----------");
 
-        ArrayList<ElementalFloor> floors = floorManager.getFloors();
+        ArrayList<Floor> floors = floorManager.getFloors();
 
         // Print
-        for (ElementalFloor floor : floors) {
+        for (Floor floor : floors) {
             System.out.println();
             System.out.println(floor.getName() + ":");
 
@@ -32,7 +32,7 @@ public class GameBoard {
                 System.out.println("+------------------------------+");
                 System.out.print("|             ");
 
-                for (Adventurer adventurer : room.getAdventurers()) {
+                for (Adventurer adventurer : floor.getAdventurersInRoom(room.getCoordinates())) {
                     if (adventurer instanceof EmberKnight)
                         System.out.print("EK,");
                     else if (adventurer instanceof MistWalker)
@@ -61,7 +61,7 @@ public class GameBoard {
 
                     System.out.print("|             ");
 
-                    for (Adventurer adventurer : room.getAdventurers()) {
+                    for (Adventurer adventurer : floor.getAdventurersInRoom(room.getCoordinates())) {
                         if (adventurer instanceof EmberKnight)
                             System.out.print("EK,");
                         else if (adventurer instanceof MistWalker)
@@ -74,7 +74,7 @@ public class GameBoard {
 
                     System.out.print(":");
 
-                    for (Creature creature : room.getCreatures()) {
+                    for (Creature creature : floor.getCreaturesInRoom(room.getCoordinates())) {
                         if (creature instanceof Aquarids)
                             System.out.print("A,");
                         else if (creature instanceof Fireborns)

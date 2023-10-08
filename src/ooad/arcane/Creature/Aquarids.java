@@ -18,7 +18,7 @@ public class Aquarids extends Creature {
     public void Move(ArrayList<Room> adjacentRooms) {
         // Go to adjacent room if adventurer is there
         for (Room room : adjacentRooms) {
-            if (!room.getAdventurers().isEmpty()) {
+            if (!manager.getAdventurersInRoom(floor, room.getCoordinates()).isEmpty()) {
                 int[] newLocation = room.getCoordinates();
                 manager.updateRoomAndFloorLists(this, floor, location, newLocation);
                 this.location = newLocation;

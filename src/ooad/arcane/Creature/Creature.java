@@ -27,10 +27,10 @@ public abstract class Creature {
 
     public void Turn() {
         // Check if there are adventurers in the current room
-        if (manager.getAdventurersInCurrentRoom(floor, location).isEmpty()) {
+        if (manager.getAdventurersInRoom(floor, location).isEmpty()) {
             Move(manager.getCurrentAdjacentRooms(floor, location));
 
-            if (!manager.getAdventurersInCurrentRoom(floor, location).isEmpty())
+            if (!manager.getAdventurersInRoom(floor, location).isEmpty())
                 Fight();
         }
         else {
@@ -43,7 +43,7 @@ public abstract class Creature {
         // Implemented on a class-by-class basis.
     }
     private void Fight() {
-        ArrayList<Adventurer> Adventurers = manager.getAdventurersInCurrentRoom(floor, location);
+        ArrayList<Adventurer> Adventurers = manager.getAdventurersInRoom(floor, location);
 
         for (Adventurer enemy : Adventurers) {
             manager.callAttack(enemy, this);

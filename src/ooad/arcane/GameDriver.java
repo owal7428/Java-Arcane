@@ -35,8 +35,6 @@ public class GameDriver {
             // Instantiate manager objects
             FloorManager floorManager = new FloorManager();
 
-            floorManager.Init();
-
             CreatureManager creatureManager = new CreatureManager(floorManager);
             AdventurerManager adventurerManager = new AdventurerManager(creatureManager, floorManager);
             creatureManager.setAdventurerManager(adventurerManager);

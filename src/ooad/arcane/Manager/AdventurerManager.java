@@ -2,7 +2,7 @@ package ooad.arcane.Manager;
 
 import ooad.arcane.Adventurer.*;
 import ooad.arcane.Creature.Creature;
-import ooad.arcane.Floor.ElementalFloor;
+import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Utility.Dice;
 
@@ -30,35 +30,27 @@ public class AdventurerManager {
         return adventurers;
     }
 
-    // Private helper function
-    private Room getCurrentRoom(String floor, int[] location) {
-        int x = location[0];
-        int y = location[1];
-        ElementalFloor currentFloor = floorManager.getFloor(floor);
-        return currentFloor.searchCoordinates(x, y);
-    }
-
     public ArrayList<Creature> getCreaturesInCurrentRoom(String floor, int[] location) {
-        Room currentRoom = getCurrentRoom(floor, location);
-        return currentRoom.getCreatures();
+        Floor currentFloor = floorManager.getFloor(floor);
+        return currentFloor.getCreaturesInRoom(location);
     }
 
     public ArrayList<Room> getCurrentAdjacentRooms(String floor, int[] location) {
-        Room currentRoom = getCurrentRoom(floor, location);
-        return currentRoom.getAdjacentRooms();
+        Floor currentFloor = floorManager.getFloor(floor);
+        return currentFloor.getAdjacentRooms(location);
     }
 
-    public void updateRoomAndFloorLists(Adventurer adventurer,String oldFloor, int[] oldLocation, String newFloor, int[] newLocation) {
-        Room oldRoom = getCurrentRoom(oldFloor, oldLocation);
-        Room newRoom = getCurrentRoom(newFloor, newLocation);
+    public void updateRoomAndFloorLists(Adventurer adventurer,String oldFloorName, int[] oldLocation, String newFloorName, int[] newLocation) {
+        Floor oldFloor = floorManager.getFloor(oldFloorName);
+        Floor newFloor = floorManager.getFloor(newFloorName);
 
-        oldRoom.removeAdventurers(adventurer);
-        newRoom.addAdventurers(adventurer);
+        oldFloor.removeAdventurersFromRoom(oldLocation, adventurer);
+        newFloor.addAdventurersToRoom(newLocation, adventurer);
 
         // Update the counter for number of adventurers in a floor
         if (!Objects.equals(oldFloor, newFloor)) {
-            floorManager.getFloor(oldFloor).decreaseNumAdventurers();
-            floorManager.getFloor(newFloor).increaseNumAdventurers();
+            oldFloor.decreaseNumAdventurers();
+            newFloor.increaseNumAdventurers();
         }
     }
 
@@ -96,12 +88,11 @@ public class AdventurerManager {
         adventurers.remove(adventurer);
 
         // Decrement the counter for number of adventurers on floor
-        ElementalFloor currentFloor = floorManager.getFloor(floor);
+        Floor currentFloor = floorManager.getFloor(floor);
         currentFloor.decreaseNumAdventurers();
 
         // Remove from current room
-        Room currentRoom = getCurrentRoom(floor, location);
-        currentRoom.removeAdventurers(adventurer);
+        currentFloor.removeAdventurersFromRoom(location, adventurer);
 
     }
 
@@ -110,7 +101,7 @@ public class AdventurerManager {
     }
 
     public void reap() {
-        ArrayList<Adventurer> temp = (ArrayList<Adventurer>) adventurers.clone();
+        ArrayList<Adventurer> temp = new ArrayList<>(adventurers);
 
         for (Adventurer adventurer : temp) {
             if (adventurer.getHealth() <= 0)

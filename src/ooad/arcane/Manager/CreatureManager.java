@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import ooad.arcane.Creature.Creature;
-import ooad.arcane.Floor.ElementalFloor;
+import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
 
 public class CreatureManager {
@@ -20,35 +20,27 @@ public class CreatureManager {
         this.floorManager = floorManager;
     }
 
-    public void addCreatures(Creature creature) {
-        livingCreatures.add(creature);
-    }
-
     // This is necessary in order for CreatureManager and AdventureManager to be instantiated
     public void setAdventurerManager(AdventurerManager adventurerManager) {
         this.adventurerManager = adventurerManager;
+    }
+
+    public void addCreatures(Creature creature) {
+        livingCreatures.add(creature);
     }
 
     public ArrayList<Creature> getLivingCreatures() {
         return livingCreatures;
     }
 
-    // Private helper function
-    private Room getCurrentRoom(String floor, int[] location) {
-        int x = location[0];
-        int y = location[1];
-        ElementalFloor currentFloor = floorManager.getFloor(floor);
-        return currentFloor.searchCoordinates(x, y);
-    }
-
-    public ArrayList<Adventurer> getAdventurersInCurrentRoom(String floor, int[] location) {
-        Room currentRoom = getCurrentRoom(floor, location);
-        return currentRoom.getAdventurers();
-    }
-
     public ArrayList<Room> getCurrentAdjacentRooms(String floor, int[] location) {
-        Room currentRoom = getCurrentRoom(floor, location);
-        return currentRoom.getAdjacentRooms();
+        Floor currentFloor = floorManager.getFloor(floor);
+        return currentFloor.getAdjacentRooms(location);
+    }
+
+    public ArrayList<Adventurer> getAdventurersInRoom(String floor, int[] location) {
+        Floor currentFloor = floorManager.getFloor(floor);
+        return currentFloor.getAdventurersInRoom(location);
     }
 
     public boolean checkFloor(String floor) {
@@ -56,16 +48,15 @@ public class CreatureManager {
     }
 
     public void updateRoomAndFloorLists(Creature creature, String floor, int[] oldLocation, int[] newLocation) {
-        Room oldRoom = getCurrentRoom(floor, oldLocation);
-        Room newRoom = getCurrentRoom(floor, newLocation);
+        Floor currentFloor = floorManager.getFloor(floor);
 
-        oldRoom.removeCreatures(creature);
-        newRoom.addCreatures(creature);
+        currentFloor.removeCreatureFromRoom(oldLocation, creature);
+        currentFloor.addCreatureToRoom(newLocation, creature);
     }
 
     public void spawnInitRoom(Creature creature, String floor, int[] location) {
-        Room newRoom = getCurrentRoom(floor, location);
-        newRoom.addCreatures(creature);
+        Floor currentFloor = floorManager.getFloor(floor);
+        currentFloor.addCreatureToRoom(location, creature);
     }
 
     public void callAttack(Adventurer adventurer, Creature creature) {
@@ -89,7 +80,7 @@ public class CreatureManager {
         adventurerManager.reap();
     }
     public void reap() {
-        ArrayList<Creature> temp = (ArrayList<Creature>) livingCreatures.clone();
+        ArrayList<Creature> temp = new ArrayList<>(livingCreatures);
 
         for (Creature creature : temp) {
             if (creature.isDead)
@@ -102,7 +93,7 @@ public class CreatureManager {
         livingCreatures.remove(creature);
 
         // Remove from current room
-        Room currentRoom = getCurrentRoom(floor, location);
-        currentRoom.removeCreatures(creature);
+        Floor currentFloor = floorManager.getFloor(floor);
+        currentFloor.removeCreatureFromRoom(location, creature);
     }
 }

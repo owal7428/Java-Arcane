@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class Room {
     private final int[] coordinates;
-    private final ArrayList<Room> adjacentRooms = new ArrayList<Room>();
-    private final ArrayList<Creature> creatures = new ArrayList<Creature>();
-    private final ArrayList<Adventurer> adventurers = new ArrayList<Adventurer>();
+    private final ArrayList<Room> adjacentRooms = new ArrayList<>();
+    private final ArrayList<Creature> creatures = new ArrayList<>();
+    private final ArrayList<Adventurer> adventurers = new ArrayList<>();
 
     public Room(int x, int y) {
         this.coordinates = new int[] {x, y};
@@ -23,35 +23,35 @@ public class Room {
         return coordinates;
     }
 
-    public ArrayList<Room> getAdjacentRooms() {
+    protected ArrayList<Room> getAdjacentRooms() {
         return adjacentRooms;
     }
 
-    public void addAdjacentRooms(Room room) {
+    protected void addAdjacentRooms(Room room) {
         this.adjacentRooms.add(room);
     }
 
-    public ArrayList<Adventurer> getAdventurers() {
+    protected ArrayList<Adventurer> getAdventurers() {
         return adventurers;
     }
 
-    public void addAdventurers(Adventurer newAdventurer) {
+    protected void addAdventurers(Adventurer newAdventurer) {
         adventurers.add(newAdventurer);
     }
 
-    public void removeAdventurers(Adventurer adventurer) {
+    protected void removeAdventurers(Adventurer adventurer) {
         adventurers.remove(adventurer);
     }
 
-    public ArrayList<Creature> getCreatures() {
+    protected ArrayList<Creature> getCreatures() {
         return creatures;
     }
 
-    public void addCreatures(Creature newCreature) {
+    protected void addCreatures(Creature newCreature) {
         creatures.add(newCreature);
     }
 
-    public void removeCreatures(Creature creature) {
+    protected void removeCreatures(Creature creature) {
         creatures.remove(creature);
     }
 }

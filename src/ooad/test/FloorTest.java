@@ -2,6 +2,7 @@ package ooad.test;
 
 import ooad.arcane.Adventurer.EmberKnight;
 import ooad.arcane.Floor.ElementalFloor;
+import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Manager.CreatureManager;
@@ -45,7 +46,7 @@ public class FloorTest {
         testAdjacent.add(new Room(0, -1));
         testAdjacent.add(new Room(-1, 0));
 
-        ArrayList<Room> testedAdjacent = floorManager.getFloor("StartFloor").searchCoordinates(0,0).getAdjacentRooms();
+        ArrayList<Room> testedAdjacent = floorManager.getFloor("StartFloor").getAdjacentRooms(new int[] {0,0});
 
         for (int i = 0; i < 4; i++) {
             assert (testAdjacent.get(i).getCoordinates()[0] == testedAdjacent.get(i).getCoordinates()[0]);
@@ -91,29 +92,26 @@ public class FloorTest {
         for (int i = 1; i <= 5; i++)
         {
             int[] oldLocation = knight.getLocation();
-            String oldFloor = knight.getFloor();
-
-            Room oldRoom = floorManager.getFloor(oldFloor).searchCoordinates(oldLocation[0], oldLocation[1]);
+            Floor oldFloor = floorManager.getFloor(knight.getFloor());
 
             knight.Turn();
 
             int[] newLocation = knight.getLocation();
-            String newFloor = knight.getFloor();
-
-            Room currentRoom = floorManager.getFloor(newFloor).searchCoordinates(newLocation[0], newLocation[1]);
+            Floor newFloor = floorManager.getFloor(knight.getFloor());
 
 
             System.out.println("Turn: " + i);
 
-            System.out.println(oldFloor);
+            System.out.println(oldFloor.getName());
             System.out.println(oldLocation[0] + "," + oldLocation[1]);
 
-            System.out.println(newFloor);
+            System.out.println(newFloor.getName());
             System.out.println(newLocation[0] + "," + newLocation[1]);
 
             System.out.println("------------");
 
-            assert(oldRoom.getAdventurers().isEmpty() && currentRoom.getAdventurers().size() == 1 );
+            assert(oldFloor.getAdventurersInRoom(oldLocation).isEmpty()
+                    && newFloor.getAdventurersInRoom(newLocation).size() == 1 );
         }
     }
 }
