@@ -21,7 +21,7 @@ public class Dice {
         return r1 + r2;
     }
 
-    public static int rollD2() {
-        return roll.nextInt(0,2);
+    public static int rollD2_Include0() {
+        return roll.nextInt(-1,2) + 1;
     }
 }

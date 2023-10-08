@@ -17,8 +17,8 @@ public class Fireborns extends Creature {
     @Override
     public void Spawn() {
         // Randomly choose x and y
-        int x = Dice.rollD2();
-        int y = Dice.rollD2();
+        int x = Dice.rollD2_Include0();
+        int y = Dice.rollD2_Include0();
 
         // Make sure it doesn't spawn in the middle
         if (x == 1 && y == 1)

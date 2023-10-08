@@ -57,8 +57,8 @@ public abstract class Creature {
 
     public void Spawn() {
         // Randomly choose x and y
-        int x = Dice.rollD2();
-        int y = Dice.rollD2();
+        int x = Dice.rollD2_Include0();
+        int y = Dice.rollD2_Include0();
 
         this.location = new int[]{x,y};
 
