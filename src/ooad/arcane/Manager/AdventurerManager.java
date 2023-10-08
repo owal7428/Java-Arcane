@@ -107,7 +107,6 @@ public class AdventurerManager {
             if (adventurer.getHealth() <= 0)
                 Despawn(adventurer, adventurer.getFloor(), adventurer.getLocation());
         }
-
     }
 
 }

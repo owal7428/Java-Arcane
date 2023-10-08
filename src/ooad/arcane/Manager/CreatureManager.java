@@ -75,19 +75,6 @@ public class CreatureManager {
 
         return found;
     }
-
-    public void signalReap() {
-        adventurerManager.reap();
-    }
-    public void reap() {
-        ArrayList<Creature> temp = new ArrayList<>(livingCreatures);
-
-        for (Creature creature : temp) {
-            if (creature.isDead)
-                killCreature(creature, creature.getFloor(), creature.getLocation());
-        }
-    }
-
     public void killCreature(Creature creature, String floor, int[] location) {
         // Remove the creature from the list
         livingCreatures.remove(creature);
@@ -95,5 +82,18 @@ public class CreatureManager {
         // Remove from current room
         Floor currentFloor = floorManager.getFloor(floor);
         currentFloor.removeCreatureFromRoom(location, creature);
+    }
+
+    public void signalReap() {
+        adventurerManager.reap();
+    }
+
+    public void reap() {
+        ArrayList<Creature> temp = new ArrayList<>(livingCreatures);
+
+        for (Creature creature : temp) {
+            if (creature.isDead)
+                killCreature(creature, creature.getFloor(), creature.getLocation());
+        }
     }
 }

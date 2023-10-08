@@ -110,6 +110,10 @@ public abstract class Adventurer {
 
         for (Creature enemy : creatures) {
             RespondToFight(enemy);
+
+            // Stop fighting if dead
+            if (health <= 0)
+                break;
         }
 
         manager.signalReap();

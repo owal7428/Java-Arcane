@@ -48,6 +48,7 @@ public abstract class Creature {
         for (Adventurer enemy : Adventurers) {
             manager.callAttack(enemy, this);
 
+            // Stop fighting if dead
             if (!manager.checkAlive(this))
                 break;
         }
