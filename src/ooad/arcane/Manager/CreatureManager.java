@@ -4,7 +4,6 @@ import ooad.arcane.Adventurer.Adventurer;
 
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Random;
 
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.ElementalFloor;
@@ -85,17 +84,6 @@ public class CreatureManager {
 
         return found;
     }
-
-    public int creatureAttackResponse()
-    {
-        // Get random evenly distributed number between 1 and 6
-        Random random = new Random();
-        int dice1 = random.nextInt(1,7);
-        int dice2 = random.nextInt(1,7);
-
-        return dice1 + dice2;
-    }
-
 
     public void signalReap() {
         adventurerManager.reap();

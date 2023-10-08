@@ -2,9 +2,9 @@ package ooad.arcane.Creature;
 
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.CreatureManager;
+import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Zephyrals extends Creature {
 
@@ -20,8 +20,7 @@ public class Zephyrals extends Creature {
         if (manager.checkFloor(floor))
             return;
 
-        Random random = new Random();
-        int nextRoom = random.nextInt(adjacentRooms.size());
+        int nextRoom = Dice.rollCustom(adjacentRooms.size());
 
         int[] newLocation = adjacentRooms.get(nextRoom).getCoordinates();
 

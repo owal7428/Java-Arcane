@@ -41,7 +41,7 @@ public class GameDriver {
             AdventurerManager adventurerManager = new AdventurerManager(creatureManager, floorManager);
             creatureManager.setAdventurerManager(adventurerManager);
 
-            BoardRenderer renderer = new BoardRenderer();
+            GameBoard renderer = new GameBoard();
 
             /* This is an example of identity because each instance of the creature classes is
             * distinct from one another. */

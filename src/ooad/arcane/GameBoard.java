@@ -15,7 +15,7 @@ import ooad.arcane.Manager.FloorManager;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class BoardRenderer {
+public class GameBoard {
     public void Render(int turn, FloorManager floorManager) {
         System.out.println("----------Turn-" + turn  + "----------");
 

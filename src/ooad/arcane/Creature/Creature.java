@@ -3,9 +3,9 @@ package ooad.arcane.Creature;
 import ooad.arcane.Adventurer.Adventurer;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.CreatureManager;
+import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /* This is an examble of inheritance because this class never gets instantiated but all the creature
 * subclasses will inherit its methods which cover the functionality all the creatures share. */
@@ -57,9 +57,8 @@ public abstract class Creature {
 
     public void Spawn() {
         // Randomly choose x and y
-        Random random = new Random();
-        int x = random.nextInt(0,3);
-        int y = random.nextInt(0,3);
+        int x = Dice.rollD2();
+        int y = Dice.rollD2();
 
         this.location = new int[]{x,y};
 

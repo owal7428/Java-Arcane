@@ -2,9 +2,9 @@ package ooad.arcane.Creature;
 
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.CreatureManager;
+import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Fireborns extends Creature {
 
@@ -17,9 +17,8 @@ public class Fireborns extends Creature {
     @Override
     public void Spawn() {
         // Randomly choose x and y
-        Random random = new Random();
-        int x = random.nextInt(0,3);
-        int y = random.nextInt(0,3);
+        int x = Dice.rollD2();
+        int y = Dice.rollD2();
 
         // Make sure it doesn't spawn in the middle
         if (x == 1 && y == 1)

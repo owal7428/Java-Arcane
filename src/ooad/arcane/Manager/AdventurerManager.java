@@ -4,10 +4,10 @@ import ooad.arcane.Adventurer.*;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.ElementalFloor;
 import ooad.arcane.Floor.Room;
+import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Random;
 
 public class AdventurerManager {
     // ArrayLists that hold the current active adventurers
@@ -66,7 +66,7 @@ public class AdventurerManager {
     * Return value indicates damage to be done to the health of the adventurer.
     * Interfaces with the creature manager class. */
     public int compareDamage(Creature creature, int attack, float dodge, int damage) {
-        int creatureAttack = creatureManager.creatureAttackResponse();
+        int creatureAttack = Dice.rollD6s();
 
         int damageTaken = 0;
 
@@ -78,8 +78,7 @@ public class AdventurerManager {
             /* Generate number between 1 and 100 inclusive. If number is less
             * than or equal to dodge * 100, dodge was successful. Doing this gets
             * probability matching dodge as a probability. */
-            Random random = new Random();
-            int dodgeRoll = random.nextInt(100) + 1;
+            int dodgeRoll = Dice.rollCustom(100);
 
             if (dodgeRoll > dodge * 100)
                 damageTaken += damage;

@@ -3,11 +3,11 @@ package ooad.arcane.Adventurer;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.AdventurerManager;
+import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.Random;
 
 public abstract class Adventurer {
     private int health;
@@ -84,9 +84,7 @@ public abstract class Adventurer {
     }
 
     private void Move(ArrayList<Room> adjacentRooms) {
-        // Use random.nextInt() to get uniform distribution for each room
-        Random random = new Random();
-        int nextRoom = random.nextInt(adjacentRooms.size());
+        int nextRoom = Dice.rollCustom(adjacentRooms.size());
 
         int[] newLocation = adjacentRooms.get(nextRoom).getCoordinates();
 
@@ -97,12 +95,9 @@ public abstract class Adventurer {
     }
 
     private void FindTreasure() {
-        // Use random.nextInt() to get uniform distribution to simulate dice roll
-        Random dice = new Random();
-        int dice1 = dice.nextInt(6) + 1;
-        int dice2 = dice.nextInt(6) + 1;
+        int roll = Dice.rollD6s();
 
-        if (dice1 + dice2 + diceBonusTreasure >= 11)
+        if (roll + diceBonusTreasure >= 11)
             this.numTreasures++;
     }
 
@@ -121,13 +116,7 @@ public abstract class Adventurer {
     }
 
     public void RespondToFight(Creature enemy) {
-        // Use random.nextInt() to get uniform distribution to simulate dice roll
-        Random dice = new Random();
-        int dice1 = dice.nextInt(0,7);
-        int dice2 = dice.nextInt(0,7);
-
-        int attack = dice1 + dice2 + diceBonusCombat;
-
+        int attack = Dice.rollD6s() + diceBonusCombat;
         health -= manager.compareDamage(enemy, attack, dodge, damageTaken);
     }
 
