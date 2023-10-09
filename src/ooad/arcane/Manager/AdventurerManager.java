@@ -80,7 +80,7 @@ public class AdventurerManager {
     }
 
     public void respondToFight(Adventurer adventurer, Creature creature) {
-        adventurer.RespondToFight(creature);
+        adventurer.FightCreature(creature);
     }
 
     public void Despawn(Adventurer adventurer, String floor, int[] location) {

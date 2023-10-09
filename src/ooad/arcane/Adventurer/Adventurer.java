@@ -15,9 +15,9 @@ public abstract class Adventurer {
     protected float dodge;
     protected int diceBonusCombat;
     protected int diceBonusTreasure;
-    private int numTreasures;
-    private int[] location;
     private String floor;
+    private int[] location;
+    private int numTreasures;
 
     /* The manager is here to send signals to other managers so that
     * the adventurers can communicate with the other game elements */
@@ -109,7 +109,7 @@ public abstract class Adventurer {
         ArrayList<Creature> creatures = manager.getCreaturesInCurrentRoom(floor, location);
 
         for (Creature enemy : creatures) {
-            RespondToFight(enemy);
+            FightCreature(enemy);
 
             // Stop fighting if dead
             if (health <= 0)
@@ -119,9 +119,29 @@ public abstract class Adventurer {
         manager.signalReap();
     }
 
-    public void RespondToFight(Creature enemy) {
+    public void FightCreature(Creature enemy) {
         int attack = Dice.rollD6s() + diceBonusCombat;
         health -= manager.compareDamage(enemy, attack, dodge, damageTaken);
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void addHealth(int bonus) {
+        health += bonus;
+    }
+
+    public void addDodge(int bonus) {
+        dodge += bonus;
+    }
+
+    public void addDiceBonusCombat(int bonus) {
+        diceBonusCombat += bonus;
+    }
+
+    public void addDiceBonusTreasure(int bonus) {
+        diceBonusTreasure += bonus;
     }
 
     public String getFloor() {
@@ -136,7 +156,4 @@ public abstract class Adventurer {
         return numTreasures;
     }
 
-    public int getHealth() {
-        return health;
-    }
 }

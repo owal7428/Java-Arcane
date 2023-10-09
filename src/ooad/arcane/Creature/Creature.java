@@ -12,8 +12,9 @@ import java.util.ArrayList;
 
 public abstract class Creature {
     public boolean isDead;
-    protected int[] location;
     protected String floor;
+    protected int[] location;
+    private int attackBonus = 0;
 
     protected CreatureManager manager;
 
@@ -72,5 +73,13 @@ public abstract class Creature {
 
     public int[] getLocation() {
         return location;
+    }
+
+    public int getAttackBonus() {
+        return attackBonus;
+    }
+
+    public void addAttackBonus(int bonus) {
+        attackBonus += bonus;
     }
 }
