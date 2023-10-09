@@ -2,13 +2,10 @@ package ooad.arcane.Adventurer.Treasure.Decorators;
 
 import ooad.arcane.Adventurer.Adventurer;
 import ooad.arcane.Adventurer.Treasure.Treasure;
-import ooad.arcane.Adventurer.Treasure.TreasureBag;
 import ooad.arcane.Adventurer.Treasure.TreasureDecorator;
 import ooad.arcane.Creature.Creature;
 
 public class Armor extends TreasureDecorator {
-    int value = 800;
-
     public Armor(Treasure treasure) {
         super(treasure);
     }
@@ -19,7 +16,13 @@ public class Armor extends TreasureDecorator {
     }
 
     @Override
+    public int getValue() {
+        int value = 800;
+        return super.getValue() + value;
+    }
+
+    @Override
     public void applyBonus(Adventurer adventurer, Creature creature) {
-        
+
     }
 }

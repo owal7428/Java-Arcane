@@ -16,7 +16,7 @@ public class TreasureDecorator implements Treasure {
 
     @Override
     public int getValue() {
-        return 0;
+        return treasure.getValue();
     }
 
     @Override
