@@ -4,14 +4,14 @@ import ooad.arcane.Adventurer.Adventurer;
 import ooad.arcane.Creature.Creature;
 
 public class TreasureDecorator implements Treasure {
-    private final TreasureBag treasureBag;
+    private final Treasure treasure;
 
-    public TreasureDecorator(TreasureBag treasureBag) {
-        this.treasureBag = treasureBag;
+    public TreasureDecorator(Treasure treasure) {
+        this.treasure = treasure;
     }
     @Override
     public int getNumTreasures() {
-        return 0;
+        return treasure.getNumTreasures();
     }
 
     @Override

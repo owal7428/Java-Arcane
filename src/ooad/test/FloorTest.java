@@ -7,7 +7,7 @@ import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Manager.FloorManager;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
