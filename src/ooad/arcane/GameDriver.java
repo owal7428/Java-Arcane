@@ -8,9 +8,9 @@ public class GameDriver {
         int numAdventurerWins = 0;
         int numCreatureWins = 0;
 
-        boolean shouldRender = false;
+        boolean shouldRender = true;
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 10; i++) {
             GameEngine engine = new GameEngine(shouldRender);
             int winner = engine.Simulate();
 
