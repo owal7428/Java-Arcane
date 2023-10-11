@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 public class GameEngine {
     private int turn = 0;
-    private int numTreasures = -1;
+    private int numTreasures = 0;
+    private int totalValue = 0;
     private int numCreatures = -1;
     private int numAdventurers = -1;
     private final boolean shouldRender;
@@ -48,11 +49,12 @@ public class GameEngine {
     // This method returns 1 if adventurers win, 0 if creatures win
     public int Simulate() {
         // Main loop
-        while(numTreasures != 50 && numAdventurers != 0 && numCreatures != 0) {
+        while(numTreasures < 24 && totalValue < 15000  && numAdventurers != 0 && numCreatures != 0) {
             turn++;
 
             // Reset values
             numTreasures = 0;
+            totalValue = 0;
             numCreatures = 0;
             numAdventurers = 0;
 
@@ -62,6 +64,7 @@ public class GameEngine {
                 numAdventurers++;
                 adventurer.Turn();
                 numTreasures += adventurer.getNumTreasures();
+                totalValue += adventurer.getTreasureValue();
             }
 
             ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
