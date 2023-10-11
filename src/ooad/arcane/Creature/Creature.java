@@ -7,7 +7,7 @@ import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
 
-/* This is an examble of inheritance because this class never gets instantiated but all the creature
+/* This is an example of inheritance because this class never gets instantiated but all the creature
 * subclasses will inherit its methods which cover the functionality all the creatures share. */
 
 public abstract class Creature {
