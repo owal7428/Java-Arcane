@@ -19,6 +19,12 @@ public abstract class Adventurer {
     private int[] location;
     private int numTreasures;
 
+    protected int healthBuff = 0;
+    protected int dodgeBuff = 0;
+    protected int combatBuff = 0;
+    protected int treasureBuff = 0;
+
+
     /* The manager is here to send signals to other managers so that
     * the adventurers can communicate with the other game elements */
     AdventurerManager manager;
@@ -129,19 +135,19 @@ public abstract class Adventurer {
     }
 
     public void addHealth(int bonus) {
-        health += bonus;
+        healthBuff += bonus;
     }
 
     public void addDodge(int bonus) {
-        dodge += bonus;
+        dodgeBuff += bonus;
     }
 
     public void addDiceBonusCombat(int bonus) {
-        diceBonusCombat += bonus;
+        combatBuff += bonus;
     }
 
     public void addDiceBonusTreasure(int bonus) {
-        diceBonusTreasure += bonus;
+        treasureBuff += bonus;
     }
 
     public String getFloor() {

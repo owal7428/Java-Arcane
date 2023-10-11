@@ -20,6 +20,8 @@ public class ZephyrRogue extends Adventurer {
             // Reset to defaults
         else
             this.diceBonusTreasure = 0;
+
+        this.diceBonusTreasure += treasureBuff;
     }
 
 }

@@ -23,7 +23,7 @@ public class TerraVoyager extends Adventurer {
             this.damageTaken = 3;
             // Reset to defaults
         else
-            this.damageTaken= 2;
+            this.damageTaken = 2;
     }
 
 }

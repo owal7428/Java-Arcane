@@ -20,6 +20,8 @@ public class MistWalker extends Adventurer {
             // Reset to defaults
         else
             this.dodge = 0.5f;
+
+        this.dodge += dodgeBuff;
     }
 
 }

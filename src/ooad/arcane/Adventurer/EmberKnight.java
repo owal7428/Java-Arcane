@@ -21,6 +21,8 @@ public class EmberKnight extends Adventurer {
         // Reset to defaults
         else
             this.diceBonusCombat = 0;
+
+        this.diceBonusCombat += combatBuff;
     }
 
 }
