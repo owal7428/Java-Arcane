@@ -5,7 +5,6 @@ import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
-import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -68,31 +67,6 @@ public class AdventurerManager {
     public void spawnInitRoom(Adventurer adventurer, String floor, int[] location) {
         Floor currentFloor = floorManager.getFloor(floor);
         currentFloor.addAdventurersToRoom(location, adventurer);
-    }
-
-    /* Method used to compare the attack of the adventurer and the creature it's attacking.
-    * Return value indicates damage to be done to the health of the adventurer.
-    * Interfaces with the creature manager class. */
-    public int compareDamage(Creature creature, int attack, float dodge, int damage) {
-        int creatureAttack = Dice.rollD6s() + creature.getAttackBonus();
-
-        int damageTaken = 0;
-
-        // Check which won the dice roll
-        if (attack > creatureAttack) {
-            creature.isDead = true;
-        }
-        else if (attack < creatureAttack) {
-            /* Generate number between 1 and 100 inclusive. If number is less
-            * than or equal to dodge * 100, dodge was successful. Doing this gets
-            * probability matching dodge as a probability. */
-            int dodgeRoll = Dice.rollCustom(100);
-
-            if (dodgeRoll > dodge * 100)
-                damageTaken += damage;
-        }
-
-        return damageTaken;
     }
 
     public void respondToFight(Adventurer adventurer, Creature creature) {
