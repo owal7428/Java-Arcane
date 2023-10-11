@@ -61,14 +61,14 @@ public class GameEngine {
             ArrayList<Adventurer> adventurers = adventurerManager.getAdventurers();
 
             for (Adventurer adventurer : adventurers) {
+                if (adventurer.getHealth() > 0) {
+                    numAdventurers++;
+                    adventurer.Turn();
+                }
+
                 numTreasures += adventurer.getNumTreasures();
                 totalValue += adventurer.getTreasureValue();
 
-                if (adventurer.getHealth() <= 0)
-                    continue;
-
-                numAdventurers++;
-                adventurer.Turn();
             }
 
             ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
@@ -79,9 +79,6 @@ public class GameEngine {
             }
             if (shouldRender)
                 renderer.Render(turn, floorManager);
-
-            System.out.println("numTreasures: " + numTreasures);
-            System.out.println("totalValue: " + totalValue);
         }
 
         System.out.println("...");

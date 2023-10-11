@@ -306,5 +306,4 @@ public abstract class Adventurer {
     public int getTreasureValue() {
         return inventory.getValue();
     }
-
 }
