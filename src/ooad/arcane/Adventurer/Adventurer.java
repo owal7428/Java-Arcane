@@ -157,7 +157,7 @@ public abstract class Adventurer {
         int roll = Dice.rollD10s();
 
         // Skip if roll fails
-        if (roll + diceBonusTreasure + treasureBuff < 12)
+        if (roll + diceBonusTreasure + treasureBuff < 15)
             return;
 
         ArrayList<Treasure> treasures = new ArrayList<>(manager.getTreasuresInCurrentRoom(floor, location));
@@ -223,8 +223,10 @@ public abstract class Adventurer {
                 default -> inventory;
             };
 
-            if (collected)
+            if (collected) {
                 manager.removeTreasureFromRoom(treasure, floor, location);
+                break;
+            }
         }
 
         applyItemBuffs();
