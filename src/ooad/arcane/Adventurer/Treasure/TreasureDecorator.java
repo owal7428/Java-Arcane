@@ -26,9 +26,4 @@ public class TreasureDecorator implements Treasure {
     public int getValue() {
         return treasure.getValue();
     }
-
-    @Override
-    public void applyBonus(Adventurer adventurer, Creature creature) {
-
-    }
 }

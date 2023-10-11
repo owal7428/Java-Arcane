@@ -9,6 +9,12 @@ public class Dice {
         return roll.nextInt(0, size);
     }
 
+    public static int rollD10s() {
+        int r1 = roll.nextInt(0,10) + 1;
+        int r2 = roll.nextInt(0,10) + 1;
+        return r1 + r2;
+    }
+
     public static int rollD6s() {
         int r1 = roll.nextInt(0,6) + 1;
         int r2 = roll.nextInt(0,6) + 1;
@@ -19,6 +25,10 @@ public class Dice {
         int r1 = roll.nextInt(0,4) + 1;
         int r2 = roll.nextInt(0,4) + 1;
         return r1 + r2;
+    }
+
+    public static int rollD4() {
+        return roll.nextInt(0,4) + 1;
     }
 
     public static int rollD2_Include0() {

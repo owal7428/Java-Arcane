@@ -79,7 +79,7 @@ public abstract class Creature {
         return attackBonus;
     }
 
-    public void addAttackBonus(int bonus) {
-        attackBonus += bonus;
+    public void setAttackBonus(int bonus) {
+        attackBonus = bonus;
     }
 }

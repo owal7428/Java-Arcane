@@ -1,6 +1,7 @@
 package ooad.arcane.Manager;
 
 import ooad.arcane.Adventurer.*;
+import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
@@ -35,6 +36,11 @@ public class AdventurerManager {
         return currentFloor.getCreaturesInRoom(location);
     }
 
+    public ArrayList<Treasure> getTreasuresInCurrentRoom(String floor, int[] location) {
+        Floor currentFloor = floorManager.getFloor(floor);
+        return currentFloor.getTreasuresInRoom(location);
+    }
+
     public ArrayList<Room> getCurrentAdjacentRooms(String floor, int[] location) {
         Floor currentFloor = floorManager.getFloor(floor);
         return currentFloor.getAdjacentRooms(location);
@@ -58,7 +64,7 @@ public class AdventurerManager {
     * Return value indicates damage to be done to the health of the adventurer.
     * Interfaces with the creature manager class. */
     public int compareDamage(Creature creature, int attack, float dodge, int damage) {
-        int creatureAttack = Dice.rollD6s();
+        int creatureAttack = Dice.rollD6s() + creature.getAttackBonus();
 
         int damageTaken = 0;
 

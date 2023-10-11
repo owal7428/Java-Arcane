@@ -21,9 +21,4 @@ public class TreasureBag implements Treasure {
     public int getValue() {
         return 0;
     }
-
-    @Override
-    public void applyBonus(Adventurer adventurer, Creature creature) {
-
-    }
 }

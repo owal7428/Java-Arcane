@@ -9,5 +9,4 @@ public interface Treasure {
     public List<String> getTreasures();
     public int getNumTreasures();
     public int getValue();
-    public void applyBonus(Adventurer adventurer, Creature creature);
 }
