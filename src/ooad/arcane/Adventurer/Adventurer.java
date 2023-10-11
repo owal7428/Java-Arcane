@@ -157,7 +157,7 @@ public abstract class Adventurer {
         int roll = Dice.rollD10s();
 
         // Skip if roll fails
-        if (roll + diceBonusTreasure + treasureBuff < 15)
+        if (searchBehavior.searchRoll(roll + diceBonusCombat + combatBuff))
             return;
 
         ArrayList<Treasure> treasures = new ArrayList<>(manager.getTreasuresInCurrentRoom(floor, location));
@@ -225,11 +225,23 @@ public abstract class Adventurer {
 
             if (collected) {
                 manager.removeTreasureFromRoom(treasure, floor, location);
+                UpgradeSearch();
                 break;
             }
         }
 
         applyItemBuffs();
+    }
+
+    private void UpgradeSearch() {
+        this.searchLevel += 1;
+
+        searchBehavior = switch(searchLevel) {
+            case 1 -> new SeasonedSearch();
+            case 2 -> new VeteranSearch();
+            case 3 -> new MasterSearch();
+            default -> searchBehavior;
+        };
     }
 
     private void applyItemBuffs() {
@@ -309,7 +321,6 @@ public abstract class Adventurer {
             default -> combatBehavior;
         };
     }
-
 
     public int getHealth() {
         return health + healthBuff;
