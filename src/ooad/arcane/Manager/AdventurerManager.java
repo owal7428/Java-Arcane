@@ -41,6 +41,11 @@ public class AdventurerManager {
         return currentFloor.getTreasuresInRoom(location);
     }
 
+    public void removeTreasureFromRoom(Treasure treasure, String floor, int[] location) {
+        Floor currentFloor = floorManager.getFloor(floor);
+        currentFloor.removeTreasuresFromRoom(location, treasure);
+    }
+
     public ArrayList<Room> getCurrentAdjacentRooms(String floor, int[] location) {
         Floor currentFloor = floorManager.getFloor(floor);
         return currentFloor.getAdjacentRooms(location);

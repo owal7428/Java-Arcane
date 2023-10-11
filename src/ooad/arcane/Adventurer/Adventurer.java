@@ -166,6 +166,8 @@ public abstract class Adventurer {
                 case Sword x -> new Sword(inventory);
                 default -> inventory;
             };
+
+            manager.removeTreasureFromRoom(treasure, floor, location);
         }
 
         applyItemBuffs();
