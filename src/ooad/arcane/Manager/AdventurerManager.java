@@ -12,6 +12,7 @@ import java.util.Objects;
 public class AdventurerManager {
     // ArrayLists that hold the current active adventurers
     private final ArrayList<Adventurer> adventurers = new ArrayList<>();
+    private final ArrayList<Adventurer> adventurersSpawned;
 
     // Managers necessary for communication between game objects
     private final CreatureManager creatureManager;
@@ -20,14 +21,34 @@ public class AdventurerManager {
     public AdventurerManager(CreatureManager creatureManager, FloorManager floorManager) {
         this.creatureManager = creatureManager;
         this.floorManager = floorManager;
-    }
 
-    public void addAdventurers(Adventurer adventurer) {
-        adventurers.add(adventurer);
+        // Add adventurers
+        adventurers.add(new EmberKnight(this));
+        adventurers.add(new MistWalker(this));
+        adventurers.add(new TerraVoyager(this));
+        adventurers.add(new ZephyrRogue(this));
+
+        adventurersSpawned = new ArrayList<>(adventurers);
     }
 
     public ArrayList<Adventurer> getAdventurers() {
         return adventurers;
+    }
+
+    public int getTotalTreasures() {
+        int temp = 0;
+        for (Adventurer adventurer : adventurersSpawned)
+            temp += adventurer.getNumTreasures();
+
+        return temp;
+    }
+
+    public int getTotalValue() {
+        int temp = 0;
+        for (Adventurer adventurer : adventurersSpawned)
+            temp += adventurer.getTreasureValue();
+
+        return temp;
     }
 
     public ArrayList<Creature> getCreaturesInCurrentRoom(String floor, int[] location) {
@@ -75,7 +96,7 @@ public class AdventurerManager {
 
     public void Despawn(Adventurer adventurer, String floor, int[] location) {
         // Remove the adventurer from the list
-        //adventurers.remove(adventurer);
+        adventurers.remove(adventurer);
 
         // Decrement the counter for number of adventurers on floor
         Floor currentFloor = floorManager.getFloor(floor);
