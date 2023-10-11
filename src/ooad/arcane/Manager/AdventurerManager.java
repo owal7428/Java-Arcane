@@ -96,7 +96,7 @@ public class AdventurerManager {
 
     public void Despawn(Adventurer adventurer, String floor, int[] location) {
         // Remove the adventurer from the list
-        adventurers.remove(adventurer);
+        //adventurers.remove(adventurer);
 
         // Decrement the counter for number of adventurers on floor
         Floor currentFloor = floorManager.getFloor(floor);

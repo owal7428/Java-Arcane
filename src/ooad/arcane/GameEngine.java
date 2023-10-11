@@ -61,10 +61,14 @@ public class GameEngine {
             ArrayList<Adventurer> adventurers = adventurerManager.getAdventurers();
 
             for (Adventurer adventurer : adventurers) {
-                numAdventurers++;
-                adventurer.Turn();
                 numTreasures += adventurer.getNumTreasures();
                 totalValue += adventurer.getTreasureValue();
+
+                if (adventurer.getHealth() <= 0)
+                    continue;
+
+                numAdventurers++;
+                adventurer.Turn();
             }
 
             ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
@@ -75,6 +79,9 @@ public class GameEngine {
             }
             if (shouldRender)
                 renderer.Render(turn, floorManager);
+
+            System.out.println("numTreasures: " + numTreasures);
+            System.out.println("totalValue: " + totalValue);
         }
 
         System.out.println("...");
@@ -83,8 +90,12 @@ public class GameEngine {
             System.out.println("Adventurers won ... All creatures killed");
             return 1;
         }
-        else if (numTreasures == 50) {
+        else if (numTreasures == 24) {
             System.out.println("Adventurers won ... All treasures found");
+            return 1;
+        }
+        else if (totalValue >= 15000) {
+            System.out.println("Adventurers won ... Treasures worth 15000 found");
             return 1;
         }
         else {
