@@ -308,4 +308,19 @@ public abstract class Adventurer {
     public int getTreasureValue() {
         return inventory.getValue();
     }
+
+    public String getTreasures() {
+        int size = inventory.getNumTreasures();
+        List<String> treasures = inventory.getTreasures();
+
+        StringBuilder temp = new StringBuilder();
+
+        for (int i = 0; i < size; i++) {
+            temp.append(treasures.get(i));
+            if (i != size - 1)
+                temp.append(", ");
+        }
+
+        return temp.toString();
+    }
 }

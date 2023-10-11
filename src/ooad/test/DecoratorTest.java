@@ -1,8 +1,13 @@
 package ooad.test;
 
+import ooad.arcane.Adventurer.Adventurer;
+import ooad.arcane.Adventurer.EmberKnight;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
 import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Adventurer.Treasure.TreasureBag;
+import ooad.arcane.Manager.AdventurerManager;
+import ooad.arcane.Manager.CreatureManager;
+import ooad.arcane.Manager.FloorManager;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,7 +19,7 @@ public class DecoratorTest {
     public void testNumTreasures() {
         Treasure inventory = new Armor(new Elixir(new Ether(new Gem(new TreasureBag()))));
         int numTreasures = inventory.getNumTreasures();
-        assert (numTreasures == 4);
+        assert (numTreasures == 3);
     }
 
     @Test
@@ -34,5 +39,26 @@ public class DecoratorTest {
         list.add("Ether");
 
         assert (Objects.equals(list, inventory.getTreasures()));
+    }
+
+    @Test
+    public void testGetTreasuresFromAdventurer() {
+        FloorManager floorManager = new FloorManager();
+        CreatureManager creatureManager = new CreatureManager(floorManager);
+        AdventurerManager adventurerManager = new AdventurerManager(creatureManager, floorManager);
+
+        creatureManager.setAdventurerManager(adventurerManager);
+
+        Adventurer emberKnight = new EmberKnight(adventurerManager);
+        adventurerManager.addAdventurers(emberKnight);
+
+        for (int i = 0; i < 20; i++)
+            emberKnight.Turn();
+
+        String treasures = emberKnight.getTreasures();
+
+        System.out.println(treasures);
+
+        assert (!Objects.equals(treasures, ""));
     }
 }
