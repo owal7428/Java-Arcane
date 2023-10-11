@@ -5,7 +5,6 @@ import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
-import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -13,6 +12,7 @@ import java.util.Objects;
 public class AdventurerManager {
     // ArrayLists that hold the current active adventurers
     private final ArrayList<Adventurer> adventurers = new ArrayList<>();
+    private final ArrayList<Adventurer> adventurersSpawned;
 
     // Managers necessary for communication between game objects
     private final CreatureManager creatureManager;
@@ -21,14 +21,34 @@ public class AdventurerManager {
     public AdventurerManager(CreatureManager creatureManager, FloorManager floorManager) {
         this.creatureManager = creatureManager;
         this.floorManager = floorManager;
-    }
 
-    public void addAdventurers(Adventurer adventurer) {
-        adventurers.add(adventurer);
+        // Add adventurers
+        adventurers.add(new EmberKnight(this));
+        adventurers.add(new MistWalker(this));
+        adventurers.add(new TerraVoyager(this));
+        adventurers.add(new ZephyrRogue(this));
+
+        adventurersSpawned = new ArrayList<>(adventurers);
     }
 
     public ArrayList<Adventurer> getAdventurers() {
         return adventurers;
+    }
+
+    public int getTotalTreasures() {
+        int temp = 0;
+        for (Adventurer adventurer : adventurersSpawned)
+            temp += adventurer.getNumTreasures();
+
+        return temp;
+    }
+
+    public int getTotalValue() {
+        int temp = 0;
+        for (Adventurer adventurer : adventurersSpawned)
+            temp += adventurer.getTreasureValue();
+
+        return temp;
     }
 
     public ArrayList<Creature> getCreaturesInCurrentRoom(String floor, int[] location) {
@@ -70,38 +90,13 @@ public class AdventurerManager {
         currentFloor.addAdventurersToRoom(location, adventurer);
     }
 
-    /* Method used to compare the attack of the adventurer and the creature it's attacking.
-    * Return value indicates damage to be done to the health of the adventurer.
-    * Interfaces with the creature manager class. */
-    public int compareDamage(Creature creature, int attack, float dodge, int damage) {
-        int creatureAttack = Dice.rollD6s() + creature.getAttackBonus();
-
-        int damageTaken = 0;
-
-        // Check which won the dice roll
-        if (attack > creatureAttack) {
-            creature.isDead = true;
-        }
-        else if (attack < creatureAttack) {
-            /* Generate number between 1 and 100 inclusive. If number is less
-            * than or equal to dodge * 100, dodge was successful. Doing this gets
-            * probability matching dodge as a probability. */
-            int dodgeRoll = Dice.rollCustom(100);
-
-            if (dodgeRoll > dodge * 100)
-                damageTaken += damage;
-        }
-
-        return damageTaken;
-    }
-
     public void respondToFight(Adventurer adventurer, Creature creature) {
         adventurer.FightCreature(creature);
     }
 
     public void Despawn(Adventurer adventurer, String floor, int[] location) {
         // Remove the adventurer from the list
-        //adventurers.remove(adventurer);
+        adventurers.remove(adventurer);
 
         // Decrement the counter for number of adventurers on floor
         Floor currentFloor = floorManager.getFloor(floor);

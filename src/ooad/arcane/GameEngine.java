@@ -24,23 +24,7 @@ public class GameEngine {
 
     public GameEngine(boolean shouldRender) {
         this.shouldRender = shouldRender;
-
         creatureManager.setAdventurerManager(adventurerManager);
-
-        /* This is an example of identity because each instance of the creature classes is
-         * distinct from one another. */
-        for (int j = 0; j < 4; j++)
-        {
-            creatureManager.addCreatures(new Aquarids(creatureManager));
-            creatureManager.addCreatures(new Fireborns(creatureManager));
-            creatureManager.addCreatures(new Terravores(creatureManager));
-            creatureManager.addCreatures(new Zephyrals(creatureManager));
-        }
-
-        adventurerManager.addAdventurers(new EmberKnight(adventurerManager));
-        adventurerManager.addAdventurers(new MistWalker(adventurerManager));
-        adventurerManager.addAdventurers(new TerraVoyager(adventurerManager));
-        adventurerManager.addAdventurers(new ZephyrRogue(adventurerManager));
     }
 
     // This method returns 1 if adventurers win, 0 if creatures win
@@ -61,15 +45,12 @@ public class GameEngine {
             ArrayList<Adventurer> adventurers = adventurerManager.getAdventurers();
 
             for (Adventurer adventurer : adventurers) {
-                if (adventurer.getHealth() > 0) {
-                    numAdventurers++;
-                    adventurer.Turn();
-                }
-
-                numTreasures += adventurer.getNumTreasures();
-                totalValue += adventurer.getTreasureValue();
-
+                numAdventurers++;
+                adventurer.Turn();
             }
+
+            numTreasures += adventurerManager.getTotalTreasures();
+            totalValue += adventurerManager.getTotalValue();
 
             ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
 

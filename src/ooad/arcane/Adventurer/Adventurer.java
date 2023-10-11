@@ -1,5 +1,6 @@
 package ooad.arcane.Adventurer;
 
+import ooad.arcane.Adventurer.Behaviors.*;
 import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Adventurer.Treasure.TreasureBag;
 import ooad.arcane.Creature.Creature;
@@ -26,6 +27,12 @@ public abstract class Adventurer {
     private int creatureBuff = 0;
     private float dodgeBuff = 0;
 
+    private int combatLevel = 0;
+    private int searchLevel = 0;
+
+    private CombatBehavior combatBehavior;
+    private SearchBehavior searchBehavior;
+
     private boolean canTeleport = false;
 
     /* The manager is here to send signals to other managers so that
@@ -41,6 +48,8 @@ public abstract class Adventurer {
         this.diceBonusTreasure = 0;
         this.damageTaken = 2;
         this.dodge = dodge;
+        this.combatBehavior = new NoviceCombat();
+        this.searchBehavior = new NoviceSearch();
         this.manager = manager;
         this.inventory = new TreasureBag();
 
@@ -148,7 +157,7 @@ public abstract class Adventurer {
         int roll = Dice.rollD10s();
 
         // Skip if roll fails
-        if (roll + diceBonusTreasure + treasureBuff < 12)
+        if (searchBehavior.searchRoll(roll + diceBonusCombat + combatBuff))
             return;
 
         ArrayList<Treasure> treasures = new ArrayList<>(manager.getTreasuresInCurrentRoom(floor, location));
@@ -214,11 +223,25 @@ public abstract class Adventurer {
                 default -> inventory;
             };
 
-            if (collected)
+            if (collected) {
                 manager.removeTreasureFromRoom(treasure, floor, location);
+                UpgradeSearch();
+                break;
+            }
         }
 
         applyItemBuffs();
+    }
+
+    private void UpgradeSearch() {
+        this.searchLevel += 1;
+
+        searchBehavior = switch(searchLevel) {
+            case 1 -> new SeasonedSearch();
+            case 2 -> new VeteranSearch();
+            case 3 -> new MasterSearch();
+            default -> searchBehavior;
+        };
     }
 
     private void applyItemBuffs() {
@@ -282,12 +305,22 @@ public abstract class Adventurer {
 
         enemy.setAttackBonus(creatureBuff);
 
-        health -= manager.compareDamage(enemy, attack, dodge, damageTaken);
+        health -= combatBehavior.Fight(this, enemy, attack, dodge, damageTaken);
 
         // Reset enemy's attack bonus because it should only apply to this adventurer
         enemy.setAttackBonus(0);
     }
 
+    public void UpgradeCombat() {
+        this.combatLevel += 1;
+
+        combatBehavior = switch(combatLevel) {
+            case 1 -> new SeasonedCombat();
+            case 2 -> new VeteranCombat();
+            case 3 -> new MasterCombat();
+            default -> combatBehavior;
+        };
+    }
 
     public int getHealth() {
         return health + healthBuff;
