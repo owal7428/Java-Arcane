@@ -33,14 +33,12 @@ public class GameBoard {
                 System.out.print("|             ");
 
                 for (Adventurer adventurer : floor.getAdventurersInRoom(room.getCoordinates())) {
-                    if (adventurer instanceof EmberKnight)
-                        System.out.print("EK,");
-                    else if (adventurer instanceof MistWalker)
-                        System.out.print("MW,");
-                    else if (adventurer instanceof TerraVoyager)
-                        System.out.print("TV,");
-                    else
-                        System.out.print("ZR,");
+                    switch (adventurer) {
+                        case EmberKnight ignored -> System.out.print("EK,");
+                        case MistWalker ignored -> System.out.print("MW,");
+                        case TerraVoyager ignored -> System.out.print("TV,");
+                        case null, default -> System.out.print("ZR,");
+                    }
                 }
 
                 System.out.print(":-");
@@ -62,27 +60,23 @@ public class GameBoard {
                     System.out.print("|             ");
 
                     for (Adventurer adventurer : floor.getAdventurersInRoom(room.getCoordinates())) {
-                        if (adventurer instanceof EmberKnight)
-                            System.out.print("EK,");
-                        else if (adventurer instanceof MistWalker)
-                            System.out.print("MW,");
-                        else if (adventurer instanceof TerraVoyager)
-                            System.out.print("TV,");
-                        else
-                            System.out.print("ZR,");
+                        switch (adventurer) {
+                            case EmberKnight ignored -> System.out.print("EK,");
+                            case MistWalker ignored -> System.out.print("MW,");
+                            case TerraVoyager ignored -> System.out.print("TV,");
+                            case null, default -> System.out.print("ZR,");
+                        }
                     }
 
                     System.out.print(":");
 
                     for (Creature creature : floor.getCreaturesInRoom(room.getCoordinates())) {
-                        if (creature instanceof Aquarids)
-                            System.out.print("A,");
-                        else if (creature instanceof Fireborns)
-                            System.out.print("F,");
-                        else if (creature instanceof Terravores)
-                            System.out.print("T,");
-                        else
-                            System.out.print("Z,");
+                        switch (creature) {
+                            case Aquarids ignored -> System.out.print("A,");
+                            case Fireborns ignored -> System.out.print("F,");
+                            case Terravores ignored -> System.out.print("T,");
+                            case null, default -> System.out.print("Z,");
+                        }
                     }
 
                     System.out.print("            ");

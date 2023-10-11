@@ -1,6 +1,7 @@
 package ooad.arcane.Floor;
 
 import ooad.arcane.Adventurer.Adventurer;
+import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
 
 import java.util.ArrayList;
@@ -138,6 +139,45 @@ public abstract class Floor {
         }
 
         room.removeAdventurers(adventurer);
+    }
+
+    public ArrayList<Treasure> getTreasuresInRoom(int[] location) {
+        Room room;
+        try {
+            room = searchCoordinates(location);
+        }
+        catch(RuntimeException e) {
+            System.out.println("Runtime exception thrown: " + e);
+            throw e;
+        }
+
+        return room.getTreasures();
+    }
+
+    public void addTreasuresToRoom(int[] location, Treasure treasure) {
+        Room room;
+        try {
+            room = searchCoordinates(location);
+        }
+        catch(RuntimeException e) {
+            System.out.println("Runtime exception thrown: " + e);
+            throw e;
+        }
+
+        room.addTreasures(treasure);
+    }
+
+    public void removeTreasuresFromRoom(int[] location, Treasure treasure) {
+        Room room;
+        try {
+            room = searchCoordinates(location);
+        }
+        catch(RuntimeException e) {
+            System.out.println("Runtime exception thrown: " + e);
+            throw e;
+        }
+
+        room.removeTreasures(treasure);
     }
 
     public ArrayList<Room> getAdjacentRooms(int[] location) {

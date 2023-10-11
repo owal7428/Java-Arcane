@@ -7,13 +7,14 @@ import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
 
-/* This is an examble of inheritance because this class never gets instantiated but all the creature
+/* This is an example of inheritance because this class never gets instantiated but all the creature
 * subclasses will inherit its methods which cover the functionality all the creatures share. */
 
 public abstract class Creature {
     public boolean isDead;
-    protected int[] location;
     protected String floor;
+    protected int[] location;
+    private int attackBonus = 0;
 
     protected CreatureManager manager;
 
@@ -23,6 +24,8 @@ public abstract class Creature {
         this.location = new int[]{0,0};
         this.floor = floor;
         this.manager = manager;
+
+        Spawn();
     }
 
     public void Turn() {
@@ -72,5 +75,13 @@ public abstract class Creature {
 
     public int[] getLocation() {
         return location;
+    }
+
+    public int getAttackBonus() {
+        return attackBonus;
+    }
+
+    public void setAttackBonus(int bonus) {
+        attackBonus = bonus;
     }
 }

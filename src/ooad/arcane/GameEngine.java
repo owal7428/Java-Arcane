@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 public class GameEngine {
     private int turn = 0;
-    private int numTreasures = -1;
+    private int numTreasures = 0;
+    private int totalValue = 0;
     private int numCreatures = -1;
     private int numAdventurers = -1;
     private final boolean shouldRender;
@@ -36,9 +37,6 @@ public class GameEngine {
             creatureManager.addCreatures(new Zephyrals(creatureManager));
         }
 
-        for (Creature creature : creatureManager.getLivingCreatures())
-            creature.Spawn();
-
         adventurerManager.addAdventurers(new EmberKnight(adventurerManager));
         adventurerManager.addAdventurers(new MistWalker(adventurerManager));
         adventurerManager.addAdventurers(new TerraVoyager(adventurerManager));
@@ -48,20 +46,29 @@ public class GameEngine {
     // This method returns 1 if adventurers win, 0 if creatures win
     public int Simulate() {
         // Main loop
-        while(numTreasures != 50 && numAdventurers != 0 && numCreatures != 0) {
+        while(numTreasures < 24 && totalValue < 15000  && numAdventurers != 0 && numCreatures != 0) {
             turn++;
+
+            if (shouldRender)
+                renderer.Render(turn, floorManager);
 
             // Reset values
             numTreasures = 0;
+            totalValue = 0;
             numCreatures = 0;
             numAdventurers = 0;
 
             ArrayList<Adventurer> adventurers = adventurerManager.getAdventurers();
 
             for (Adventurer adventurer : adventurers) {
-                numAdventurers++;
-                adventurer.Turn();
+                if (adventurer.getHealth() > 0) {
+                    numAdventurers++;
+                    adventurer.Turn();
+                }
+
                 numTreasures += adventurer.getNumTreasures();
+                totalValue += adventurer.getTreasureValue();
+
             }
 
             ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
@@ -70,8 +77,6 @@ public class GameEngine {
                 numCreatures++;
                 creature.Turn();
             }
-            if (shouldRender)
-                renderer.Render(turn, floorManager);
         }
 
         System.out.println("...");
@@ -80,8 +85,12 @@ public class GameEngine {
             System.out.println("Adventurers won ... All creatures killed");
             return 1;
         }
-        else if (numTreasures == 50) {
+        else if (numTreasures == 24) {
             System.out.println("Adventurers won ... All treasures found");
+            return 1;
+        }
+        else if (totalValue >= 15000) {
+            System.out.println("Adventurers won ... Treasures worth 15000 found");
             return 1;
         }
         else {

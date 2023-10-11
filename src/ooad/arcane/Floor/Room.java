@@ -1,5 +1,6 @@
 package ooad.arcane.Floor;
 
+import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Adventurer.Adventurer;
 
@@ -13,6 +14,7 @@ public class Room {
     private final ArrayList<Room> adjacentRooms = new ArrayList<>();
     private final ArrayList<Creature> creatures = new ArrayList<>();
     private final ArrayList<Adventurer> adventurers = new ArrayList<>();
+    private final ArrayList<Treasure> treasures = new ArrayList<>();
 
     public Room(int x, int y) {
         this.coordinates = new int[] {x, y};
@@ -53,5 +55,17 @@ public class Room {
 
     protected void removeCreatures(Creature creature) {
         creatures.remove(creature);
+    }
+
+    protected ArrayList<Treasure> getTreasures() {
+        return treasures;
+    }
+
+    protected void addTreasures(Treasure newTreasure) {
+        treasures.add(newTreasure);
+    }
+
+    protected void removeTreasures(Treasure treasure) {
+        treasures.remove(treasure);
     }
 }

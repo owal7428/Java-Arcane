@@ -16,15 +16,19 @@ public class Fireborns extends Creature {
 
     @Override
     public void Spawn() {
-        // Randomly choose x and y
-        int x = Dice.rollD2_Include0();
-        int y = Dice.rollD2_Include0();
+        int x;
+        int y;
 
         // Make sure it doesn't spawn in the middle
-        if (x == 1 && y == 1)
-            x = 2;
+        do {
+            // Randomly choose x and y
+            x = Dice.rollD2_Include0();
+            y = Dice.rollD2_Include0();
+        } while (x == 1 && y == 1);
 
         this.location = new int[]{x,y};
+
+        manager.spawnInitRoom(this, floor, location);
     }
 
     // fireborns move clockwise

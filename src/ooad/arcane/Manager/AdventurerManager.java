@@ -1,6 +1,7 @@
 package ooad.arcane.Manager;
 
 import ooad.arcane.Adventurer.*;
+import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
@@ -35,6 +36,16 @@ public class AdventurerManager {
         return currentFloor.getCreaturesInRoom(location);
     }
 
+    public ArrayList<Treasure> getTreasuresInCurrentRoom(String floor, int[] location) {
+        Floor currentFloor = floorManager.getFloor(floor);
+        return currentFloor.getTreasuresInRoom(location);
+    }
+
+    public void removeTreasureFromRoom(Treasure treasure, String floor, int[] location) {
+        Floor currentFloor = floorManager.getFloor(floor);
+        currentFloor.removeTreasuresFromRoom(location, treasure);
+    }
+
     public ArrayList<Room> getCurrentAdjacentRooms(String floor, int[] location) {
         Floor currentFloor = floorManager.getFloor(floor);
         return currentFloor.getAdjacentRooms(location);
@@ -54,11 +65,16 @@ public class AdventurerManager {
         }
     }
 
+    public void spawnInitRoom(Adventurer adventurer, String floor, int[] location) {
+        Floor currentFloor = floorManager.getFloor(floor);
+        currentFloor.addAdventurersToRoom(location, adventurer);
+    }
+
     /* Method used to compare the attack of the adventurer and the creature it's attacking.
     * Return value indicates damage to be done to the health of the adventurer.
     * Interfaces with the creature manager class. */
     public int compareDamage(Creature creature, int attack, float dodge, int damage) {
-        int creatureAttack = Dice.rollD6s();
+        int creatureAttack = Dice.rollD6s() + creature.getAttackBonus();
 
         int damageTaken = 0;
 
@@ -80,12 +96,12 @@ public class AdventurerManager {
     }
 
     public void respondToFight(Adventurer adventurer, Creature creature) {
-        adventurer.RespondToFight(creature);
+        adventurer.FightCreature(creature);
     }
 
     public void Despawn(Adventurer adventurer, String floor, int[] location) {
         // Remove the adventurer from the list
-        adventurers.remove(adventurer);
+        //adventurers.remove(adventurer);
 
         // Decrement the counter for number of adventurers on floor
         Floor currentFloor = floorManager.getFloor(floor);

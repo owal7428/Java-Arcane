@@ -1,38 +1,50 @@
 package ooad.arcane.Adventurer;
 
+import ooad.arcane.Adventurer.Treasure.Treasure;
+import ooad.arcane.Adventurer.Treasure.TreasureBag;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Utility.Dice;
+import ooad.arcane.Adventurer.Treasure.Decorators.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Adventurer {
     private int health;
-    protected int damageTaken;
-    protected float dodge;
+    private String floor;
+    private int[] location;
+
     protected int diceBonusCombat;
     protected int diceBonusTreasure;
-    private int numTreasures;
-    private int[] location;
-    private String floor;
+    protected int damageTaken;
+    protected float dodge;
+
+    private int healthBuff = 0;
+    private int combatBuff = 0;
+    private int treasureBuff = 0;
+    private int creatureBuff = 0;
+    private float dodgeBuff = 0;
+
+    private boolean canTeleport = false;
 
     /* The manager is here to send signals to other managers so that
     * the adventurers can communicate with the other game elements */
     AdventurerManager manager;
+    Treasure inventory;
 
     protected Adventurer(int health, float dodge, AdventurerManager manager) {
         this.health = health;
-        this.damageTaken = 2;
-        this.dodge = dodge;
+        this.floor = "StartFloor";
+        this.location = new int[] {0,0};
         this.diceBonusCombat = 0;
         this.diceBonusTreasure = 0;
-        this.numTreasures = 0;
-        this.location = new int[] {0,0};
-        this.floor = "StartFloor";
+        this.damageTaken = 2;
+        this.dodge = dodge;
         this.manager = manager;
+        this.inventory = new TreasureBag();
+
+        manager.spawnInitRoom(this, floor, location);
     }
 
     public void Turn() {
@@ -71,8 +83,12 @@ public abstract class Adventurer {
                     manager.updateRoomAndFloorLists(this,floor,location,newFloor,new int[]{1,1});
                     this.floor = newFloor;
                     this.location = new int[]{1, 1};
+
+                    FindTreasure();
                 }
-                else FindTreasure();
+                else {
+                    FindTreasure();
+                }
             }
             else {
                 Fight();
@@ -84,6 +100,11 @@ public abstract class Adventurer {
     }
 
     private void Move(ArrayList<Room> adjacentRooms) {
+        /* Attempt to teleport if able to. If the roll fails, will move normally. */
+        if (canTeleport) {
+            if (Teleport()) return;
+        }
+
         int nextRoom = Dice.rollCustom(adjacentRooms.size());
 
         int[] newLocation = adjacentRooms.get(nextRoom).getCoordinates();
@@ -94,11 +115,147 @@ public abstract class Adventurer {
         this.location = newLocation;
     }
 
-    private void FindTreasure() {
-        int roll = Dice.rollD6s();
+    // Returns true if teleport was successful, false otherwise.
+    private boolean Teleport() {
+        int shouldTeleport = Dice.rollD10s();
 
-        if (roll + diceBonusTreasure >= 11)
-            this.numTreasures++;
+        if (shouldTeleport < 15)
+            return false;
+
+        int floor_num = Dice.rollD4();
+        int x = Dice.rollD2_Include0();
+        int y = Dice.rollD2_Include0();
+
+        int[] newLocation = new int[]{x,y};
+
+        String newFloor = switch (floor_num) {
+            case 1 -> "FireFloor";
+            case 2 -> "WaterFloor";
+            case 3 -> "AirFloor";
+            case 4 -> "EarthFloor";
+            default -> floor;
+        };
+
+        manager.updateRoomAndFloorLists(this, floor, location, newFloor, newLocation);
+
+        this.floor = newFloor;
+        this.location = newLocation;
+
+        return true;
+    }
+
+    private void FindTreasure() {
+        int roll = Dice.rollD10s();
+
+        // Skip if roll fails
+        if (roll + diceBonusTreasure + treasureBuff < 12)
+            return;
+
+        ArrayList<Treasure> treasures = new ArrayList<>(manager.getTreasuresInCurrentRoom(floor, location));
+
+        // This is an example of using decorator pattern
+        for (Treasure treasure : treasures) {
+            boolean collected = false;
+
+            inventory = switch (treasure) {
+                case Armor ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Armor") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Armor(inventory);
+                    }
+                }
+                case Elixir ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Elixir") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Elixir(inventory);
+                    }
+                }
+                case Ether ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Ether") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Ether(inventory);
+                    }
+                }
+                case Portal ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Portal") >= 1) {
+                        yield inventory;
+                    }
+                    else {
+                        collected = true;
+                        yield new Portal(inventory);
+                    }
+                }
+                case Potion ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Potion") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Potion(inventory);
+                    }
+                }
+                case Sword ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Sword") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Sword(inventory);
+                    }
+                }
+                case Gem ignored -> {
+                    collected = true;
+                    yield new Gem(inventory);
+                }
+                default -> inventory;
+            };
+
+            if (collected)
+                manager.removeTreasureFromRoom(treasure, floor, location);
+        }
+
+        applyItemBuffs();
+    }
+
+    private void applyItemBuffs() {
+        List<String> itemList = inventory.getTreasures();
+
+        // Reset buff values before recalculating
+        healthBuff = 0;
+        combatBuff = 0;
+        treasureBuff = 0;
+        creatureBuff = 0;
+        dodgeBuff = 0;
+
+        for (String item : itemList) {
+            switch (item) {
+                case "Sword":
+                    combatBuff += 1;
+                    break;
+                case "Armor":
+                    creatureBuff -= 1;
+                    break;
+                case "Portal":
+                    canTeleport = true;
+                    break;
+                case "Potion":
+                    healthBuff += 1;
+                    break;
+                case "Ether":
+                    treasureBuff += 1;
+                    break;
+                case "Elixir":
+                    dodgeBuff += 0.1f;
+                    break;
+                case "Gem":
+                    creatureBuff += 1;
+                    break;
+            }
+        }
     }
 
     protected void ApplyDiscordOrResonance() {
@@ -109,19 +266,31 @@ public abstract class Adventurer {
         ArrayList<Creature> creatures = manager.getCreaturesInCurrentRoom(floor, location);
 
         for (Creature enemy : creatures) {
-            RespondToFight(enemy);
+            FightCreature(enemy);
 
             // Stop fighting if dead
-            if (health <= 0)
+            if (health + healthBuff <= 0)
                 break;
         }
 
         manager.signalReap();
     }
 
-    public void RespondToFight(Creature enemy) {
-        int attack = Dice.rollD6s() + diceBonusCombat;
+    public void FightCreature(Creature enemy) {
+        int attack = Dice.rollD6s() + diceBonusCombat + combatBuff;
+        float dodge = this.dodge + dodgeBuff;
+
+        enemy.setAttackBonus(creatureBuff);
+
         health -= manager.compareDamage(enemy, attack, dodge, damageTaken);
+
+        // Reset enemy's attack bonus because it should only apply to this adventurer
+        enemy.setAttackBonus(0);
+    }
+
+
+    public int getHealth() {
+        return health + healthBuff;
     }
 
     public String getFloor() {
@@ -133,10 +302,25 @@ public abstract class Adventurer {
     }
 
     public int getNumTreasures() {
-        return numTreasures;
+        return inventory.getNumTreasures();
     }
 
-    public int getHealth() {
-        return health;
+    public int getTreasureValue() {
+        return inventory.getValue();
+    }
+
+    public String getTreasures() {
+        int size = inventory.getNumTreasures();
+        List<String> treasures = inventory.getTreasures();
+
+        StringBuilder temp = new StringBuilder();
+
+        for (int i = 0; i < size; i++) {
+            temp.append(treasures.get(i));
+            if (i != size - 1)
+                temp.append(", ");
+        }
+
+        return temp.toString();
     }
 }
