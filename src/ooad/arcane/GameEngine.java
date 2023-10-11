@@ -37,9 +37,6 @@ public class GameEngine {
             creatureManager.addCreatures(new Zephyrals(creatureManager));
         }
 
-        for (Creature creature : creatureManager.getLivingCreatures())
-            creature.Spawn();
-
         adventurerManager.addAdventurers(new EmberKnight(adventurerManager));
         adventurerManager.addAdventurers(new MistWalker(adventurerManager));
         adventurerManager.addAdventurers(new TerraVoyager(adventurerManager));
@@ -51,6 +48,9 @@ public class GameEngine {
         // Main loop
         while(numTreasures < 24 && totalValue < 15000  && numAdventurers != 0 && numCreatures != 0) {
             turn++;
+
+            if (shouldRender)
+                renderer.Render(turn, floorManager);
 
             // Reset values
             numTreasures = 0;
@@ -77,8 +77,6 @@ public class GameEngine {
                 numCreatures++;
                 creature.Turn();
             }
-            if (shouldRender)
-                renderer.Render(turn, floorManager);
         }
 
         System.out.println("...");

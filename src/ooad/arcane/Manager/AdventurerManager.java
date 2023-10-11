@@ -65,6 +65,11 @@ public class AdventurerManager {
         }
     }
 
+    public void spawnInitRoom(Adventurer adventurer, String floor, int[] location) {
+        Floor currentFloor = floorManager.getFloor(floor);
+        currentFloor.addAdventurersToRoom(location, adventurer);
+    }
+
     /* Method used to compare the attack of the adventurer and the creature it's attacking.
     * Return value indicates damage to be done to the health of the adventurer.
     * Interfaces with the creature manager class. */

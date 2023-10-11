@@ -43,6 +43,8 @@ public abstract class Adventurer {
         this.dodge = dodge;
         this.manager = manager;
         this.inventory = new TreasureBag();
+
+        manager.spawnInitRoom(this, floor, location);
     }
 
     public void Turn() {

@@ -24,6 +24,8 @@ public abstract class Creature {
         this.location = new int[]{0,0};
         this.floor = floor;
         this.manager = manager;
+
+        Spawn();
     }
 
     public void Turn() {
