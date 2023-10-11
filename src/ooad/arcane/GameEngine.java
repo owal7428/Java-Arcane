@@ -6,7 +6,6 @@ import ooad.arcane.Creature.*;
 import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Manager.FloorManager;
-import ooad.arcane.Tracker;
 
 import java.util.ArrayList;
 
@@ -16,7 +15,7 @@ public class GameEngine {
     private int numCreatures = -1;
     private int numAdventurers = -1;
     private final boolean shouldRender;
-    private Tracker tracker;
+
 
     FloorManager floorManager = new FloorManager();
     CreatureManager creatureManager = new CreatureManager(floorManager);
@@ -25,8 +24,6 @@ public class GameEngine {
 
     public GameEngine(boolean shouldRender) {
         this.shouldRender = shouldRender;
-
-        creatureManager.setAdventurerManager(adventurerManager);
 
         /* This is an example of identity because each instance of the creature classes is
          * distinct from one another. */
@@ -50,7 +47,6 @@ public class GameEngine {
     // This method returns 1 if adventurers win, 0 if creatures win
     public int Simulate() {
         // Main loop
-        tracker = new Tracker(); 
         while(numTreasures != 50 && numAdventurers != 0 && numCreatures != 0) {
             turn++;
 
@@ -76,8 +72,7 @@ public class GameEngine {
             if (shouldRender)
             renderer.Render(turn, floorManager);
 
-            
-            tracker.printSummary(); 
+
         }
 
         System.out.println("...");
