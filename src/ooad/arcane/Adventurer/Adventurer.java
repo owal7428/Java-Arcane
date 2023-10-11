@@ -8,10 +8,7 @@ import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Utility.Dice;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Adventurer {
     private int health;
@@ -152,22 +149,71 @@ public abstract class Adventurer {
         if (roll + diceBonusTreasure + treasureBuff < 12)
             return;
 
-        ArrayList<Treasure> treasures = manager.getTreasuresInCurrentRoom(floor, location);
+        ArrayList<Treasure> treasures = new ArrayList<>(manager.getTreasuresInCurrentRoom(floor, location));
 
         // This is an example of using decorator pattern
         for (Treasure treasure : treasures) {
+            boolean collected = false;
+
             inventory = switch (treasure) {
-                case Armor x -> new Armor(inventory);
-                case Elixir x -> new Elixir(inventory);
-                case Ether x -> new Ether(inventory);
-                case Gem x -> new Gem(inventory);
-                case Portal x -> new Portal(inventory);
-                case Potion x -> new Potion(inventory);
-                case Sword x -> new Sword(inventory);
+                case Armor ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Armor") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Armor(inventory);
+                    }
+                }
+                case Elixir ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Elixir") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Elixir(inventory);
+                    }
+                }
+                case Ether ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Ether") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Ether(inventory);
+                    }
+                }
+                case Portal ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Portal") >= 1) {
+                        yield inventory;
+                    }
+                    else {
+                        collected = true;
+                        yield new Portal(inventory);
+                    }
+                }
+                case Potion ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Potion") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Potion(inventory);
+                    }
+                }
+                case Sword ignored -> {
+                    if (Collections.frequency(inventory.getTreasures(), "Sword") >= 1)
+                        yield inventory;
+                    else {
+                        collected = true;
+                        yield new Sword(inventory);
+                    }
+                }
+                case Gem ignored -> {
+                    collected = true;
+                    yield new Gem(inventory);
+                }
                 default -> inventory;
             };
 
-            manager.removeTreasureFromRoom(treasure, floor, location);
+            if (collected)
+                manager.removeTreasureFromRoom(treasure, floor, location);
         }
 
         applyItemBuffs();

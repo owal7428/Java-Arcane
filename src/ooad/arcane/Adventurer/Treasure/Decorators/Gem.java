@@ -20,7 +20,7 @@ public class Gem extends TreasureDecorator {
 
     @Override
     public int getNumTreasures() {
-        return super.getNumTreasures() + 1;
+        return super.getNumTreasures();
     }
 
     @Override
