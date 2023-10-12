@@ -5,7 +5,7 @@ import ooad.arcane.Adventurer.Adventurer;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import ooad.arcane.Creature.*;
+import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
 
@@ -18,16 +18,6 @@ public class CreatureManager {
     public CreatureManager(FloorManager floorManager) {
         // Setup managers
         this.floorManager = floorManager;
-
-        /* This is an example of identity because each instance of the creature classes is
-         * distinct from one another. */
-        for (int j = 0; j < 4; j++)
-        {
-            livingCreatures.add(new Aquarids(this));
-            livingCreatures.add(new Fireborns(this));
-            livingCreatures.add(new Terravores(this));
-            livingCreatures.add(new Zephyrals(this));
-        }
     }
 
     // This is necessary in order for CreatureManager and AdventureManager to be instantiated
