@@ -10,7 +10,7 @@ public class TerraVoyager extends Adventurer {
     String affinity = "Earth";
 
     public TerraVoyager(AdventurerManager manager) {
-        super(7, 0.1f, manager);
+        super(7, 0.1f, manager, "Terra Voyager");
     }
 
     @Override

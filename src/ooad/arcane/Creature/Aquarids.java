@@ -1,5 +1,7 @@
 package ooad.arcane.Creature;
 
+import ooad.arcane.Event;
+import ooad.arcane.GameEngine;
 import ooad.arcane.Floor.*;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Utility.Dice;
@@ -10,7 +12,7 @@ public class Aquarids extends Creature {
 
     //Constructor (spawn method)
     public Aquarids(CreatureManager manager) {
-        super(manager, "WaterFloor");
+        super(manager, "WaterFloor", "Aquarid");
     }
 
     //aquarids move to adjacent room
@@ -38,6 +40,10 @@ public class Aquarids extends Creature {
         manager.updateRoomAndFloorLists(this, floor, location, newLocation);
 
         this.location = newLocation;
+
+
+         Event event = new Event(this.getName() + " has entered the room " + "[" + newLocation[0] + ", " + newLocation[1] + "]");
+        GameEngine.getEvents().addEvent(event);
     }
 
 }

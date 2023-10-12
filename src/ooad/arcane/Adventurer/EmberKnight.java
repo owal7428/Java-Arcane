@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class EmberKnight extends Adventurer {
     public EmberKnight(AdventurerManager manager) {
-        super(5, 0.2f, manager);
+        super(5, 0.2f, manager, "Ember Knight");
     }
 
     @Override

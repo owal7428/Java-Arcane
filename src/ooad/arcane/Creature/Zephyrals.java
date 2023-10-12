@@ -1,5 +1,7 @@
 package ooad.arcane.Creature;
 
+import ooad.arcane.Event;
+import ooad.arcane.GameEngine;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Utility.Dice;
@@ -10,7 +12,7 @@ public class Zephyrals extends Creature {
 
     //Constructor (spawn method)
     public Zephyrals(CreatureManager manager) {
-        super(manager, "AirFloor");
+        super(manager, "AirFloor", "Zephyral");
     }
 
     //zephyrals move randomly
@@ -28,6 +30,8 @@ public class Zephyrals extends Creature {
         manager.updateRoomAndFloorLists(this, floor, location, newLocation);
 
         this.location = newLocation;
+        Event event = new Event(this.getName() + " has entered the room " + "[" + newLocation[0] + ", " + newLocation[1] + "]");
+        GameEngine.getEvents().addEvent(event);
     }
 
 }
