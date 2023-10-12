@@ -38,6 +38,7 @@ public class GameEngine{
     }
     public GameEngine(boolean shouldRender) {
         this.shouldRender = shouldRender;
+<<<<<<< HEAD
         this.tracker = new Tracker(turn);
 
         events = new Events();
@@ -58,6 +59,9 @@ public class GameEngine{
         adventurerManager.addAdventurers(new MistWalker(adventurerManager));
         adventurerManager.addAdventurers(new TerraVoyager(adventurerManager));
         adventurerManager.addAdventurers(new ZephyrRogue(adventurerManager));
+=======
+        creatureManager.setAdventurerManager(adventurerManager);
+>>>>>>> f82b236b84f96bc588b04366914f8cfb4b4cb374
     }
 
     // This method returns 1 if adventurers win, 0 if creatures win
@@ -89,15 +93,12 @@ public class GameEngine{
 
 
             for (Adventurer adventurer : adventurers) {
-                if (adventurer.getHealth() > 0) {
-                    numAdventurers++;
-                    adventurer.Turn();
-                }
-
-                numTreasures += adventurer.getNumTreasures();
-                totalValue += adventurer.getTreasureValue();
-
+                numAdventurers++;
+                adventurer.Turn();
             }
+
+            numTreasures += adventurerManager.getTotalTreasures();
+            totalValue += adventurerManager.getTotalValue();
 
             ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
 

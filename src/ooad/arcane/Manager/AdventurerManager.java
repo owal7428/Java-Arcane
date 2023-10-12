@@ -7,7 +7,6 @@ import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
 import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
-import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -15,6 +14,7 @@ import java.util.Objects;
 public class AdventurerManager {
     // ArrayLists that hold the current active adventurers
     private final ArrayList<Adventurer> adventurers = new ArrayList<>();
+    private final ArrayList<Adventurer> adventurersSpawned;
 
     // Managers necessary for communication between game objects
     private final CreatureManager creatureManager;
@@ -23,14 +23,34 @@ public class AdventurerManager {
     public AdventurerManager(CreatureManager creatureManager, FloorManager floorManager) {
         this.creatureManager = creatureManager;
         this.floorManager = floorManager;
-    }
 
-    public void addAdventurers(Adventurer adventurer) {
-        adventurers.add(adventurer);
+        // Add adventurers
+        adventurers.add(new EmberKnight(this));
+        adventurers.add(new MistWalker(this));
+        adventurers.add(new TerraVoyager(this));
+        adventurers.add(new ZephyrRogue(this));
+
+        adventurersSpawned = new ArrayList<>(adventurers);
     }
 
     public ArrayList<Adventurer> getAdventurers() {
         return adventurers;
+    }
+
+    public int getTotalTreasures() {
+        int temp = 0;
+        for (Adventurer adventurer : adventurersSpawned)
+            temp += adventurer.getNumTreasures();
+
+        return temp;
+    }
+
+    public int getTotalValue() {
+        int temp = 0;
+        for (Adventurer adventurer : adventurersSpawned)
+            temp += adventurer.getTreasureValue();
+
+        return temp;
     }
 
     public ArrayList<Creature> getCreaturesInCurrentRoom(String floor, int[] location) {
@@ -72,6 +92,7 @@ public class AdventurerManager {
         currentFloor.addAdventurersToRoom(location, adventurer);
     }
 
+<<<<<<< HEAD
     /* Method used to compare the attack of the adventurer and the creature it's attacking.
     * Return value indicates damage to be done to the health of the adventurer.
     * Interfaces with the creature manager class. */
@@ -100,13 +121,15 @@ public class AdventurerManager {
         return damageTaken;
     }
 
+=======
+>>>>>>> f82b236b84f96bc588b04366914f8cfb4b4cb374
     public void respondToFight(Adventurer adventurer, Creature creature) {
         adventurer.FightCreature(creature);
     }
 
     public void Despawn(Adventurer adventurer, String floor, int[] location) {
         // Remove the adventurer from the list
-        //adventurers.remove(adventurer);
+        adventurers.remove(adventurer);
 
         // Decrement the counter for number of adventurers on floor
         Floor currentFloor = floorManager.getFloor(floor);
