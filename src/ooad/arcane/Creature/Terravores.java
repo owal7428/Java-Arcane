@@ -10,7 +10,7 @@ public class Terravores extends Creature {
 
     //Constructor (spawn method)
     public Terravores(CreatureManager manager) {
-        super(manager, "EarthFloor", "Terravore");
+        super(manager, "EarthFloor");
     }
 
     //terravores dont move

@@ -1,7 +1,5 @@
 package ooad.arcane.Manager;
 
-import ooad.arcane.Event;
-import ooad.arcane.GameEngine;
 import ooad.arcane.Adventurer.*;
 import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Creature.Creature;
@@ -83,9 +81,6 @@ public class AdventurerManager {
         // Check which won the dice roll
         if (attack > creatureAttack) {
             creature.isDead = true;
-
-            Event event = new Event(this.getClass() + " defeated creature" );
-            GameEngine.getEvents().addEvent(event);
         }
         else if (attack < creatureAttack) {
             /* Generate number between 1 and 100 inclusive. If number is less

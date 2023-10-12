@@ -8,11 +8,6 @@ import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Utility.Dice;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
 
-import ooad.arcane.GameEngine;
-
-import ooad.arcane.Event;
-
-
 import java.util.*;
 
 public abstract class Adventurer {
@@ -31,8 +26,6 @@ public abstract class Adventurer {
     private int creatureBuff = 0;
     private float dodgeBuff = 0;
 
-    private String name;
-
     private boolean canTeleport = false;
 
     /* The manager is here to send signals to other managers so that
@@ -40,7 +33,7 @@ public abstract class Adventurer {
     AdventurerManager manager;
     Treasure inventory;
 
-    protected Adventurer(int health, float dodge, AdventurerManager manager, String name) {
+    protected Adventurer(int health, float dodge, AdventurerManager manager) {
         this.health = health;
         this.floor = "StartFloor";
         this.location = new int[] {0,0};
@@ -52,8 +45,6 @@ public abstract class Adventurer {
         this.inventory = new TreasureBag();
 
         manager.spawnInitRoom(this, floor, location);
-
-        this.name = name;
     }
 
     public void Turn() {
@@ -118,17 +109,10 @@ public abstract class Adventurer {
 
         int[] newLocation = adjacentRooms.get(nextRoom).getCoordinates();
 
-        
-
         // Update the adventurer list for the current room
         manager.updateRoomAndFloorLists(this, floor, location, floor, newLocation);
 
         this.location = newLocation;
-
-
-       
-        Event event = new Event(this.getName() + " has entered the room " + "[" + newLocation[0] + ", " + newLocation[1] + "]");
-        GameEngine.getEvents().addEvent(event);
     }
 
     // Returns true if teleport was successful, false otherwise.
@@ -338,13 +322,5 @@ public abstract class Adventurer {
         }
 
         return temp.toString();
-    }
-
-    public int getRoom() {
-        return 0;
-    }
-
-    public String getName() {
-        return this.name;
     }
 }

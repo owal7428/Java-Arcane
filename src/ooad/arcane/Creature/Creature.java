@@ -15,17 +15,15 @@ public abstract class Creature {
     protected String floor;
     protected int[] location;
     private int attackBonus = 0;
-    private String name;
 
     protected CreatureManager manager;
 
     //Constructor (spawn method)
-    public Creature(CreatureManager manager, String floor, String name) {
+    public Creature(CreatureManager manager, String floor) {
         this.isDead = false;
         this.location = new int[]{0,0};
         this.floor = floor;
         this.manager = manager;
-        this.name= name;
 
         Spawn();
     }
@@ -85,13 +83,5 @@ public abstract class Creature {
 
     public void setAttackBonus(int bonus) {
         attackBonus = bonus;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getRoom() {
-        return null;
     }
 }

@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class ZephyrRogue extends Adventurer {
     public ZephyrRogue(AdventurerManager manager) {
-        super(3, 0.25f, manager, "Zephyr Rogue");
+        super(3, 0.25f, manager);
     }
 
     @Override

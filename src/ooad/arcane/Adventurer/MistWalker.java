@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class MistWalker extends Adventurer {
     public MistWalker(AdventurerManager manager) {
-        super(3, 0.5f, manager, "Mist Walker");
+        super(3, 0.5f, manager);
     }
 
     @Override

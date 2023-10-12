@@ -33,7 +33,7 @@ public class Room {
         this.adjacentRooms.add(room);
     }
 
-    public ArrayList<Adventurer> getAdventurers() {
+    protected ArrayList<Adventurer> getAdventurers() {
         return adventurers;
     }
 
