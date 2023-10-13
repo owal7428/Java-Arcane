@@ -8,10 +8,11 @@ import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Utility.Dice;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
+import ooad.arcane.Utility.Subject;
 
 import java.util.*;
 
-public abstract class Adventurer {
+public abstract class Adventurer implements Subject {
     private int health;
     private String floor;
     private int[] location;
@@ -157,7 +158,7 @@ public abstract class Adventurer {
         int roll = Dice.rollD10s();
 
         // Skip if roll fails
-        if (searchBehavior.searchRoll(roll + diceBonusCombat + combatBuff))
+        if (searchBehavior.searchRoll(roll + diceBonusCombat + treasureBuff))
             return;
 
         ArrayList<Treasure> treasures = new ArrayList<>(manager.getTreasuresInCurrentRoom(floor, location));

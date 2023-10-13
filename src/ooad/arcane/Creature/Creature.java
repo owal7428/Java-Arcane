@@ -4,13 +4,14 @@ import ooad.arcane.Adventurer.Adventurer;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Utility.Dice;
+import ooad.arcane.Utility.Subject;
 
 import java.util.ArrayList;
 
 /* This is an example of inheritance because this class never gets instantiated but all the creature
 * subclasses will inherit its methods which cover the functionality all the creatures share. */
 
-public abstract class Creature {
+public abstract class Creature implements Subject {
     public boolean isDead;
     protected String floor;
     protected int[] location;

@@ -6,10 +6,13 @@ import ooad.arcane.Creature.*;
 import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Manager.FloorManager;
-
+import ooad.arcane.Utility.Logger;
+import ooad.arcane.Utility.Observer;
+import ooad.arcane.Utility.Subject;
+import ooad.arcane.Utility.Tracker;
 import java.util.ArrayList;
 
-public class GameEngine {
+public class GameEngine implements Subject {
     private int turn = 0;
     private int numTreasures = 0;
     private int totalValue = 0;
@@ -25,6 +28,17 @@ public class GameEngine {
     public GameEngine(boolean shouldRender) {
         this.shouldRender = shouldRender;
         creatureManager.setAdventurerManager(adventurerManager);
+
+        Observer logger = new Logger();
+        Observer tracker = new Tracker();
+
+        addObserver(logger);
+        addObserver(tracker);
+
+        for (Adventurer adventurer : adventurerManager.getAdventurers()) {
+            adventurer.addObserver(logger);
+            adventurer.addObserver(tracker);
+        }
     }
 
     // This method returns 1 if adventurers win, 0 if creatures win
