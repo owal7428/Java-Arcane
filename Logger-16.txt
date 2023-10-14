@@ -1,8 +1,0 @@
-EmberKnight moved to StartFloor: [1, 0].
-EmberKnight moved to EarthFloor: [1, 1].
-MistWalker moved to WaterFloor: [0, 0].
-MistWalker has found a(n) Gem.
-MistWalker has upgraded search.
-TerraVoyager moved to AirFloor: [0, 1].
-ZephyrRogue moved to StartFloor: [0, -1].
-ZephyrRogue moved to FireFloor: [1, 1].

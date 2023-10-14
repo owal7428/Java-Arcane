@@ -1,7 +1,0 @@
-EmberKnight moved to AirFloor: [2, 2].
-MistWalker moved to WaterFloor: [0, 1].
-TerraVoyager moved to AirFloor: [0, 1].
-ZephyrRogue moved to WaterFloor: [2, 2].
-Fireborn moved to FireFloor: [2, 0].
-Fireborn moved to FireFloor: [2, 0].
-Fireborn moved to FireFloor: [1, 0].

@@ -1,9 +1,0 @@
-EmberKnight moved to WaterFloor: [0, 0].
-MistWalker moved to WaterFloor: [0, 1].
-TerraVoyager moved to AirFloor: [0, 1].
-TerraVoyager has found a(n) Armor.
-TerraVoyager has upgraded search.
-ZephyrRogue moved to WaterFloor: [0, 0].
-Fireborn moved to FireFloor: [2, 2].
-Fireborn moved to FireFloor: [2, 2].
-Fireborn moved to FireFloor: [2, 1].

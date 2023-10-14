@@ -1,6 +1,0 @@
-EmberKnight moved to EarthFloor: [1, 1].
-MistWalker moved to WaterFloor: [2, 0].
-MistWalker has found a(n) Elixir.
-MistWalker has upgraded search.
-TerraVoyager moved to AirFloor: [1, 0].
-ZephyrRogue moved to FireFloor: [0, 0].
