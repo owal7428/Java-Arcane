@@ -10,7 +10,7 @@ public class GameDriver {
 
         boolean shouldRender = false;
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 1; i++) {
             GameEngine engine = new GameEngine(shouldRender);
             int winner = engine.Simulate();
 
@@ -29,5 +29,4 @@ public class GameDriver {
         System.out.println("...");
         System.out.println("Game Finished.");
     }
-
 }

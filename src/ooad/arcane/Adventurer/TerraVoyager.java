@@ -16,14 +16,23 @@ public class TerraVoyager extends Adventurer {
     @Override
     public void ApplyDiscordOrResonance() {
         // Check resonance
-        if (Objects.equals(getFloor(), "EarthFloor"))
+        if (Objects.equals(getFloor(), "EarthFloor")) {
             this.damageTaken = 1;
+            this.hasResonance = true;
+            notifyObservers(getType(this) + " has earth resonance.");
+        }
             // Check discord
-        else if (Objects.equals(getFloor(), "FireFloor"))
+        else if (Objects.equals(getFloor(), "FireFloor")) {
             this.damageTaken = 3;
+            this.hasDiscord = true;
+            notifyObservers(getType(this) + " has fire discord.");
+        }
             // Reset to defaults
-        else
+        else {
             this.damageTaken = 2;
+            this.hasResonance = false;
+            this.hasDiscord = false;
+        }
     }
 
 }

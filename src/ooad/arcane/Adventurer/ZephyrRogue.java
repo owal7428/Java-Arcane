@@ -12,14 +12,23 @@ public class ZephyrRogue extends Adventurer {
     @Override
     public void ApplyDiscordOrResonance() {
         // Check resonance
-        if (Objects.equals(getFloor(), "AirFloor"))
-            this.diceBonusTreasure= 2;
+        if (Objects.equals(getFloor(), "AirFloor")) {
+            this.diceBonusTreasure = 2;
+            this.hasResonance = true;
+            notifyObservers(getType(this) + " has air resonance.");
+        }
             // Check discord
-        else if (Objects.equals(getFloor(), "EarthFloor"))
+        else if (Objects.equals(getFloor(), "EarthFloor")) {
             this.diceBonusTreasure = -2;
+            this.hasDiscord = true;
+            notifyObservers(getType(this) + " has earth discord.");
+        }
             // Reset to defaults
-        else
+        else {
             this.diceBonusTreasure = 0;
+            this.hasResonance = false;
+            this.hasDiscord = false;
+        }
     }
 
 }

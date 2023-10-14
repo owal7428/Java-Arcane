@@ -8,6 +8,7 @@ import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Utility.Dice;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
+import ooad.arcane.Utility.Observer;
 import ooad.arcane.Utility.Subject;
 
 import java.util.*;
@@ -35,11 +36,15 @@ public abstract class Adventurer implements Subject {
     private SearchBehavior searchBehavior;
 
     private boolean canTeleport = false;
+    protected boolean hasResonance = false;
+    protected boolean hasDiscord = false;
 
     /* The manager is here to send signals to other managers so that
     * the adventurers can communicate with the other game elements */
     AdventurerManager manager;
     Treasure inventory;
+
+    private final ArrayList<Observer> observers = new ArrayList<>();
 
     protected Adventurer(int health, float dodge, AdventurerManager manager) {
         this.health = health;
@@ -57,6 +62,22 @@ public abstract class Adventurer implements Subject {
         manager.spawnInitRoom(this, floor, location);
     }
 
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyObservers(String event) {
+        for (Observer observer : observers)
+            observer.Update(event);
+    }
+
     public void Turn() {
         /* Get creatures in room; If there aren't look for treasure.
          * Else, fight the creatures. */
@@ -66,7 +87,10 @@ public abstract class Adventurer implements Subject {
             // Move if there are no creatures
             ArrayList<Room> adjacentRooms = manager.getCurrentAdjacentRooms(floor, location);
             Move(adjacentRooms);
-            ApplyDiscordOrResonance();
+
+            // notify observers of this adventurer's new location
+            notifyObservers(getType(this) + " moved to " + floor + ": "
+                    + Arrays.toString(location) + ".");
 
             creatures = manager.getCreaturesInCurrentRoom(floor, location);
 
@@ -76,6 +100,7 @@ public abstract class Adventurer implements Subject {
                     manager.updateRoomAndFloorLists(this,floor,location,"StartFloor",new int[]{0,0});
                     this.floor = "StartFloor";
                     this.location = new int[]{0,0};
+                    ApplyDiscordOrResonance();
                 }
                 /* Check if we're on the starting floor. If so, check which elemental tile we're on
                  * and move to that floor at position {1,1} which is the center. */
@@ -94,6 +119,10 @@ public abstract class Adventurer implements Subject {
                     this.floor = newFloor;
                     this.location = new int[]{1, 1};
 
+                    notifyObservers(getType(this) + " moved to " + floor + ": "
+                            + Arrays.toString(location) + ".");
+
+                    ApplyDiscordOrResonance();
                     FindTreasure();
                 }
                 else {
@@ -167,12 +196,15 @@ public abstract class Adventurer implements Subject {
         for (Treasure treasure : treasures) {
             boolean collected = false;
 
+            String treasureType = "";
+
             inventory = switch (treasure) {
                 case Armor ignored -> {
                     if (Collections.frequency(inventory.getTreasures(), "Armor") >= 1)
                         yield inventory;
                     else {
                         collected = true;
+                        treasureType = "Armor";
                         yield new Armor(inventory);
                     }
                 }
@@ -181,6 +213,7 @@ public abstract class Adventurer implements Subject {
                         yield inventory;
                     else {
                         collected = true;
+                        treasureType = "Elixir";
                         yield new Elixir(inventory);
                     }
                 }
@@ -189,15 +222,16 @@ public abstract class Adventurer implements Subject {
                         yield inventory;
                     else {
                         collected = true;
+                        treasureType = "Ether";
                         yield new Ether(inventory);
                     }
                 }
                 case Portal ignored -> {
-                    if (Collections.frequency(inventory.getTreasures(), "Portal") >= 1) {
+                    if (Collections.frequency(inventory.getTreasures(), "Portal") >= 1)
                         yield inventory;
-                    }
                     else {
                         collected = true;
+                        treasureType = "Portal";
                         yield new Portal(inventory);
                     }
                 }
@@ -206,6 +240,7 @@ public abstract class Adventurer implements Subject {
                         yield inventory;
                     else {
                         collected = true;
+                        treasureType = "Potion";
                         yield new Potion(inventory);
                     }
                 }
@@ -214,11 +249,13 @@ public abstract class Adventurer implements Subject {
                         yield inventory;
                     else {
                         collected = true;
+                        treasureType = "Sword";
                         yield new Sword(inventory);
                     }
                 }
                 case Gem ignored -> {
                     collected = true;
+                    treasureType = "Gem";
                     yield new Gem(inventory);
                 }
                 default -> inventory;
@@ -226,6 +263,8 @@ public abstract class Adventurer implements Subject {
 
             if (collected) {
                 manager.removeTreasureFromRoom(treasure, floor, location);
+                notifyObservers(getType(this) + " has found a(n) "
+                        + treasureType + ".");
                 UpgradeSearch();
                 break;
             }
@@ -243,6 +282,8 @@ public abstract class Adventurer implements Subject {
             case 3 -> new MasterSearch();
             default -> searchBehavior;
         };
+
+        notifyObservers(getType(this) + " has upgraded search.");
     }
 
     private void applyItemBuffs() {
@@ -293,20 +334,30 @@ public abstract class Adventurer implements Subject {
             FightCreature(enemy);
 
             // Stop fighting if dead
-            if (health + healthBuff <= 0)
+            if (health + healthBuff <= 0) {
+                notifyObservers(getType(this) + " has died.");
                 break;
+            }
         }
 
         manager.signalReap();
     }
 
     public void FightCreature(Creature enemy) {
+        notifyObservers(getType(this) + " is now fighting " + getType(enemy) + ".");
+
         int attack = Dice.rollD6s() + diceBonusCombat + combatBuff;
         float dodge = this.dodge + dodgeBuff;
 
         enemy.setAttackBonus(creatureBuff);
 
-        health -= combatBehavior.Fight(this, enemy, attack, dodge, damageTaken);
+        int damage = combatBehavior.Fight(this, enemy, attack, dodge, damageTaken);
+        health -= damage;
+
+        int tempHealth = health + healthBuff;
+
+        notifyObservers(getType(this) + " has lost " + damage
+                + " health; it now has " + tempHealth + " left.");
 
         // Reset enemy's attack bonus because it should only apply to this adventurer
         enemy.setAttackBonus(0);
@@ -321,6 +372,8 @@ public abstract class Adventurer implements Subject {
             case 3 -> new MasterCombat();
             default -> combatBehavior;
         };
+
+        notifyObservers(getType(this) + " has upgraded combat.");
     }
 
     public int getHealth() {

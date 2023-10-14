@@ -5,6 +5,7 @@ import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Aquarids extends Creature {
 
@@ -22,6 +23,8 @@ public class Aquarids extends Creature {
                 int[] newLocation = room.getCoordinates();
                 manager.updateRoomAndFloorLists(this, floor, location, newLocation);
                 this.location = newLocation;
+                notifyObservers(getType(this) + " moved to " + floor + ": "
+                        + Arrays.toString(location) + ".");
                 return;
             }
         }
@@ -38,6 +41,9 @@ public class Aquarids extends Creature {
         manager.updateRoomAndFloorLists(this, floor, location, newLocation);
 
         this.location = newLocation;
+
+        notifyObservers(getType(this) + " moved to " + floor + ": "
+                + Arrays.toString(location) + ".");
     }
 
 }

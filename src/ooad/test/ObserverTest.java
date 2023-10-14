@@ -10,7 +10,7 @@ public class ObserverTest {
     @Test
     public void testLoggerWrite() {
         Logger logger = new Logger();
-        logger.Update("This is a test.\n");
+        logger.Update("This is a test.");
         logger.Update("Newline.");
         logger.writeEvents(0);
 
@@ -20,7 +20,7 @@ public class ObserverTest {
             while((i=reader.read())!=-1)
                 temp.append((char) i);
             String temp_str = temp.toString();
-            assert (temp_str.equals("This is a test.\nNewline."));
+            assert (temp_str.equals("This is a test.\nNewline.\n"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

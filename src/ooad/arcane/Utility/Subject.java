@@ -1,20 +1,29 @@
 package ooad.arcane.Utility;
 
+import ooad.arcane.Adventurer.*;
+import ooad.arcane.Creature.Aquarids;
+import ooad.arcane.Creature.Fireborns;
+import ooad.arcane.Creature.Terravores;
+import ooad.arcane.Creature.Zephyrals;
+
 import java.util.ArrayList;
 
 public interface Subject {
-    ArrayList<Observer> observers = new ArrayList<>();
+    void addObserver(Observer observer);
+    void removeObserver(Observer observer);
+    void notifyObservers(String event);
 
-    default void addObserver(Observer observer) {
-        observers.add(observer);
-    }
-
-    default void removeObserver(Observer observer) {
-        observers.add(observer);
-    }
-
-    default void notifyObservers(String event) {
-        for (Observer observer : observers)
-            observer.Update(event);
+    default String getType(Subject subject) {
+        return switch(subject) {
+            case EmberKnight ignored -> "EmberKnight";
+            case MistWalker ignored -> "MistWalker";
+            case TerraVoyager ignored -> "TerraVoyager";
+            case ZephyrRogue ignored -> "ZephyrRogue";
+            case Aquarids ignored -> "Aquarid";
+            case Fireborns ignored -> "Fireborn";
+            case Terravores ignored -> "Terravore";
+            case Zephyrals ignored -> "Zephyrals";
+            default -> throw new IllegalStateException("Unexpected value: " + subject);
+        };
     }
 }

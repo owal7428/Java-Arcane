@@ -10,7 +10,7 @@ import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
 
 public class CreatureManager {
-    public final ArrayList<Creature> livingCreatures = new ArrayList<>();
+    private final ArrayList<Creature> livingCreatures = new ArrayList<>();
 
     private AdventurerManager adventurerManager;
     private final FloorManager floorManager;

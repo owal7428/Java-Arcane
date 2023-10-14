@@ -4,6 +4,7 @@ import ooad.arcane.Adventurer.Adventurer;
 import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Utility.Dice;
+import ooad.arcane.Utility.Observer;
 import ooad.arcane.Utility.Subject;
 
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public abstract class Creature implements Subject {
 
     protected CreatureManager manager;
 
+    private final ArrayList<Observer> observers = new ArrayList<>();
+
     //Constructor (spawn method)
     public Creature(CreatureManager manager, String floor) {
         this.isDead = false;
@@ -27,6 +30,22 @@ public abstract class Creature implements Subject {
         this.manager = manager;
 
         Spawn();
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyObservers(String event) {
+        for (Observer observer : observers)
+            observer.Update(event);
     }
 
     public void Turn() {
@@ -50,11 +69,15 @@ public abstract class Creature implements Subject {
         ArrayList<Adventurer> Adventurers = manager.getAdventurersInRoom(floor, location);
 
         for (Adventurer enemy : Adventurers) {
+            notifyObservers(getType(this) + " is now fighting " + getType(enemy) + ".");
+
             manager.callAttack(enemy, this);
 
             // Stop fighting if dead
-            if (!manager.checkAlive(this))
+            if (!manager.checkAlive(this)) {
+                notifyObservers(getType(this) + " has died.");
                 break;
+            }
         }
 
         manager.signalReap();

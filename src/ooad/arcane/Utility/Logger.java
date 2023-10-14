@@ -2,8 +2,17 @@ package ooad.arcane.Utility;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Logger implements Observer {
+    Queue<String> events = new LinkedList<>();
+
+    @Override
+    public void Update(String event) {
+        events.add(event + "\n");
+    }
+
     public void writeEvents(int turn) {
         String filename = "Logger-" + turn + ".txt";
 

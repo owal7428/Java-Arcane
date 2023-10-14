@@ -7,6 +7,7 @@ import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Manager.FloorManager;
 import ooad.arcane.Utility.Logger;
+import ooad.arcane.Utility.Observer;
 import ooad.arcane.Utility.Tracker;
 import ooad.arcane.Utility.Subject;
 import java.util.ArrayList;
@@ -24,6 +25,8 @@ public class GameEngine implements Subject {
     AdventurerManager adventurerManager = new AdventurerManager(creatureManager, floorManager);
     GameBoard renderer = new GameBoard();
 
+    private final ArrayList<Observer> observers = new ArrayList<>();
+
     Logger logger = new Logger();
     Tracker tracker = new Tracker();
 
@@ -38,6 +41,27 @@ public class GameEngine implements Subject {
             adventurer.addObserver(logger);
             adventurer.addObserver(tracker);
         }
+
+        for (Creature creature : creatureManager.getLivingCreatures()) {
+            creature.addObserver(logger);
+            creature.addObserver(tracker);
+        }
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyObservers(String event) {
+        for (Observer observer : observers)
+            observer.Update(event);
     }
 
     // This method returns 1 if adventurers win, 0 if creatures win
