@@ -1,9 +1,6 @@
 package ooad.arcane.Utility;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-
+// This is used in the observer pattern implementation
 public interface Observer {
     void Update(String event);
 }

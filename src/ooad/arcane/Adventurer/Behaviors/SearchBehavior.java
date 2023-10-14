@@ -1,5 +1,7 @@
 package ooad.arcane.Adventurer.Behaviors;
 
+/* Interface used in strategy pattern. The classes that inherit from this
+ * are the concrete behaviors. */
 public interface SearchBehavior {
-    public boolean searchRoll(int initialRoll);
+    boolean searchRoll(int initialRoll);
 }

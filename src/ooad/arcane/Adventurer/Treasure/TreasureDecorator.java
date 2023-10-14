@@ -1,8 +1,5 @@
 package ooad.arcane.Adventurer.Treasure;
 
-import ooad.arcane.Adventurer.Adventurer;
-import ooad.arcane.Creature.Creature;
-
 import java.util.List;
 
 public class TreasureDecorator implements Treasure {

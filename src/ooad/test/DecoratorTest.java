@@ -1,7 +1,6 @@
 package ooad.test;
 
 import ooad.arcane.Adventurer.Adventurer;
-import ooad.arcane.Adventurer.EmberKnight;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
 import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Adventurer.Treasure.TreasureBag;

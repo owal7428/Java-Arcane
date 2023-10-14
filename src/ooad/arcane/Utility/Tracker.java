@@ -4,6 +4,7 @@ import ooad.arcane.Adventurer.Adventurer;
 import ooad.arcane.Creature.Creature;
 import java.util.ArrayList;
 
+// Concrete observer object; part of observer pattern
 public class Tracker implements Observer {
     @Override
     public void Update(String event) {

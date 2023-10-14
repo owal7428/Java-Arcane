@@ -5,10 +5,6 @@ import ooad.arcane.Manager.AdventurerManager;
 import java.util.Objects;
 
 public class TerraVoyager extends Adventurer {
-    int health = 7;
-    float dodge = 0.1f;
-    String affinity = "Earth";
-
     public TerraVoyager(AdventurerManager manager) {
         super(7, 0.1f, manager);
     }

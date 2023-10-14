@@ -6,8 +6,7 @@ import ooad.arcane.Creature.Fireborns;
 import ooad.arcane.Creature.Terravores;
 import ooad.arcane.Creature.Zephyrals;
 
-import java.util.ArrayList;
-
+// This is used in the observer pattern implementation
 public interface Subject {
     void addObserver(Observer observer);
     void removeObserver(Observer observer);

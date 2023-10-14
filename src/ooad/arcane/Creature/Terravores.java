@@ -16,7 +16,7 @@ public class Terravores extends Creature {
     //terravores dont move
     @Override
     public void Move(ArrayList<Room> adjacentRooms) {
-        return;
+        // Terravores don't move
     }
 
 }

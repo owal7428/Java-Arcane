@@ -1,6 +1,5 @@
 package ooad.arcane.Adventurer;
 
-import ooad.arcane.Floor.Room;
 import ooad.arcane.Manager.AdventurerManager;
 
 import java.util.Objects;

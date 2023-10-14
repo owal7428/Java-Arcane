@@ -3,13 +3,13 @@ package ooad.arcane.Adventurer;
 import ooad.arcane.Adventurer.Behaviors.*;
 import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Adventurer.Treasure.TreasureBag;
-import ooad.arcane.Creature.Creature;
-import ooad.arcane.Floor.Room;
-import ooad.arcane.Manager.AdventurerManager;
-import ooad.arcane.Utility.Dice;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
+import ooad.arcane.Utility.Dice;
 import ooad.arcane.Utility.Observer;
 import ooad.arcane.Utility.Subject;
+import ooad.arcane.Manager.AdventurerManager;
+import ooad.arcane.Creature.Creature;
+import ooad.arcane.Floor.Room;
 
 import java.util.*;
 
@@ -60,8 +60,6 @@ public abstract class Adventurer implements Subject {
         this.inventory = new TreasureBag();
 
         manager.spawnInitRoom(this, floor, location);
-
-        notifyObservers(getType(this) + " has spawned at " + floor + ": " + Arrays.toString(location) + ".");
     }
 
     @Override
@@ -188,13 +186,15 @@ public abstract class Adventurer implements Subject {
     private void FindTreasure() {
         int roll = Dice.rollD10s();
 
-        // Skip if roll fails
+        /* Uses search behavior strategy pattern here to calculate the dice roll.
+        * Skip rest of search of roll is not sufficient */
         if (searchBehavior.searchRoll(roll + diceBonusCombat + treasureBuff))
             return;
 
         ArrayList<Treasure> treasures = new ArrayList<>(manager.getTreasuresInCurrentRoom(floor, location));
 
-        // This is an example of using decorator pattern
+        /* If there is a treasure in the room, check if adventurer already has treasure of that type.
+        * If yes, skip to next treasure. Else, wrap it around the current inventory as a decorator. */
         for (Treasure treasure : treasures) {
             boolean collected = false;
 
@@ -265,8 +265,7 @@ public abstract class Adventurer implements Subject {
 
             if (collected) {
                 manager.removeTreasureFromRoom(treasure, floor, location);
-                notifyObservers(getType(this) + " has found a(n) "
-                        + treasureType + ".");
+                notifyObservers(getType(this) + " has found a(n) " + treasureType + ".");
                 UpgradeSearch();
                 break;
             }
@@ -384,19 +383,6 @@ public abstract class Adventurer implements Subject {
         // If totalHealth is less than 0, return 0. Else, return totalHealth
         return Math.max(0, totalHealth);
     }
-
-    public String getFloor() {
-        return floor;
-    }
-
-    public int[] getLocation() {
-        return location;
-    }
-
-    public int getNumTreasures() {
-        return inventory.getNumTreasures();
-    }
-
     public int getTreasureValue() {
         return inventory.getValue();
     }
@@ -416,6 +402,18 @@ public abstract class Adventurer implements Subject {
         }
 
         return temp.toString();
+    }
+
+    public int getNumTreasures() {
+        return inventory.getNumTreasures();
+    }
+
+    public String getFloor() {
+        return floor;
+    }
+
+    public int[] getLocation() {
+        return location;
     }
 
     public boolean getHasResonance() {

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
+// Concrete observer object; part of observer pattern
 public class Logger implements Observer {
     Queue<String> events = new LinkedList<>();
 

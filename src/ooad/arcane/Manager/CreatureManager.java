@@ -35,10 +35,6 @@ public class CreatureManager {
         this.adventurerManager = adventurerManager;
     }
 
-    public void addCreatures(Creature creature) {
-        livingCreatures.add(creature);
-    }
-
     public ArrayList<Creature> getLivingCreatures() {
         return livingCreatures;
     }
