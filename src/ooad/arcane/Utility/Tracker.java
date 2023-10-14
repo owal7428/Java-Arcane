@@ -18,7 +18,7 @@ public class Tracker implements Observer {
         System.out.println("Total Active Adventurers: " + adventurers.size());
 
         // Print out formatted strings that are left aligned; makes it look clean
-        System.out.printf("%-18s %-18s %-18s %-24s %-18s \n", "Adventurers", "Room", "Health", "Treasure", "Value");
+        System.out.printf("%-18s %-20s %-10s %-34s %-10s \n", "Adventurers", "Room", "Health", "Treasure", "Value");
 
         for (Adventurer adventurer : adventurers) {
             String name = adventurer.getType(adventurer);
@@ -28,7 +28,7 @@ public class Tracker implements Observer {
             int value = adventurer.getTreasureValue();
 
             // Prints out formatted data to match headers
-            System.out.printf("%-18s %-18s %-18d %-24s %-18d \n", name, room, health, treasures, value);
+            System.out.printf("%-18s %-20s %-10d %-34s %-10d \n", name, room, health, treasures, value);
         }
 
         System.out.println();

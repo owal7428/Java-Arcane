@@ -60,6 +60,8 @@ public abstract class Adventurer implements Subject {
         this.inventory = new TreasureBag();
 
         manager.spawnInitRoom(this, floor, location);
+
+        notifyObservers(getType(this) + " has spawned at " + floor + ": " + Arrays.toString(location) + ".");
     }
 
     @Override

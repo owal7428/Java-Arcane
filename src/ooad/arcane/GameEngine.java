@@ -73,13 +73,19 @@ public class GameEngine implements Subject {
             if (shouldRender)
                 renderer.Render(turn, floorManager, adventurerManager, creatureManager);
 
+            ArrayList<Adventurer> adventurers = adventurerManager.getLivingAdventurers();
+            ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
+
+            if (shouldRender) {
+                logger.writeEvents(turn);
+                tracker.printStatus(turn, totalValue, adventurers, creatures);
+            }
+
             // Reset values
             numTreasures = 0;
             totalValue = 0;
             numCreatures = 0;
             numAdventurers = 0;
-
-            ArrayList<Adventurer> adventurers = adventurerManager.getLivingAdventurers();
 
             for (Adventurer adventurer : adventurers) {
                 numAdventurers++;
@@ -89,15 +95,13 @@ public class GameEngine implements Subject {
             numTreasures += adventurerManager.getTotalTreasures();
             totalValue += adventurerManager.getTotalValue();
 
-            ArrayList<Creature> creatures = creatureManager.getLivingCreatures();
+            // Reset just in case creatures have died after adventurer's turns
+            creatures = creatureManager.getLivingCreatures();
 
             for (Creature creature : creatures) {
                 numCreatures++;
                 creature.Turn();
             }
-
-            if (shouldRender)
-                logger.writeEvents(turn);
         }
 
         System.out.println("...");

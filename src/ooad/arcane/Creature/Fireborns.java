@@ -30,6 +30,8 @@ public class Fireborns extends Creature {
         this.location = new int[]{x,y};
 
         manager.spawnInitRoom(this, floor, location);
+
+        notifyObservers(getType(this) + " has spawned at " + floor + ": " + Arrays.toString(location) + ".");
     }
 
     // fireborns move clockwise
