@@ -7,9 +7,8 @@ import ooad.arcane.Manager.AdventurerManager;
 import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Manager.FloorManager;
 import ooad.arcane.Utility.Logger;
-import ooad.arcane.Utility.Observer;
-import ooad.arcane.Utility.Subject;
 import ooad.arcane.Utility.Tracker;
+import ooad.arcane.Utility.Subject;
 import java.util.ArrayList;
 
 public class GameEngine implements Subject {
