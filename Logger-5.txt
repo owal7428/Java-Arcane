@@ -1,0 +1,16 @@
+EmberKnight moved to FireFloor: [0, 1].
+MistWalker moved to StartFloor: [0, -1].
+MistWalker moved to FireFloor: [1, 1].
+TerraVoyager moved to WaterFloor: [0, 0].
+ZephyrRogue is now fighting Terravore.
+ZephyrRogue has lost combat to Terravore.
+ZephyrRogue has lost 0 health; it now has 1 left.
+Zephyral moved to AirFloor: [1, 1].
+Zephyral moved to AirFloor: [0, 0].
+Zephyral moved to AirFloor: [0, 1].
+Terravore is now fighting ZephyrRogue.
+ZephyrRogue is now fighting Terravore.
+Terravore has lost combat to ZephyrRogue.
+ZephyrRogue has upgraded combat.
+ZephyrRogue has lost 0 health; it now has 1 left.
+Zephyral moved to AirFloor: [1, 1].

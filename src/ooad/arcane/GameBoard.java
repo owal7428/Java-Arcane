@@ -10,13 +10,15 @@ import ooad.arcane.Creature.Fireborns;
 import ooad.arcane.Creature.Terravores;
 import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
+import ooad.arcane.Manager.AdventurerManager;
+import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Manager.FloorManager;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class GameBoard {
-    public void Render(int turn, FloorManager floorManager) {
+    public void Render(int turn, FloorManager floorManager, AdventurerManager adventurerManager, CreatureManager creatureManager) {
         System.out.println("----------Turn-" + turn  + "----------");
 
         ArrayList<Floor> floors = floorManager.getFloors();
@@ -85,6 +87,36 @@ public class GameBoard {
                 }
             }
         }
+
+        System.out.println();
+        System.out.println();
+
+        for (Adventurer adventurer : adventurerManager.getAllAdventurers()) {
+            String name = adventurer.getType(adventurer);
+            System.out.println(name + " - " + adventurer.getNumTreasures() + " Treasure(s) - "
+                    + adventurer.getHealth() + " Health Remaining");
+        }
+
+        int numAquarids = 0;
+        int numFireborns = 0;
+        int numTerravores = 0;
+        int numZephyrals = 0;
+
+        for (Creature creature : creatureManager.getLivingCreatures()) {
+            String name = creature.getType(creature);
+
+            switch (name) {
+                case "Aquarid" -> numAquarids++;
+                case "Fireborn" -> numFireborns++;
+                case "Terravore" -> numTerravores++;
+                case null, default -> numZephyrals++;
+            }
+        }
+
+        System.out.println("Aquarids - " + numAquarids + " remaining");
+        System.out.println("Fireborns - " + numFireborns + " remaining");
+        System.out.println("Terravores - " + numTerravores + " remaining");
+        System.out.println("Zephyrals - " + numZephyrals + " remaining");
 
         System.out.println();
         System.out.println();

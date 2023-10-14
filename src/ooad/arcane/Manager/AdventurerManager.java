@@ -11,8 +11,8 @@ import java.util.Objects;
 
 public class AdventurerManager {
     // ArrayLists that hold the current active adventurers
-    private final ArrayList<Adventurer> adventurers = new ArrayList<>();
-    private final ArrayList<Adventurer> adventurersSpawned;
+    private final ArrayList<Adventurer> livingAdventurers = new ArrayList<>();
+    private final ArrayList<Adventurer> allAdventurers;
 
     // Managers necessary for communication between game objects
     private final CreatureManager creatureManager;
@@ -23,21 +23,25 @@ public class AdventurerManager {
         this.floorManager = floorManager;
 
         // Add adventurers
-        adventurers.add(new EmberKnight(this));
-        adventurers.add(new MistWalker(this));
-        adventurers.add(new TerraVoyager(this));
-        adventurers.add(new ZephyrRogue(this));
+        livingAdventurers.add(new EmberKnight(this));
+        livingAdventurers.add(new MistWalker(this));
+        livingAdventurers.add(new TerraVoyager(this));
+        livingAdventurers.add(new ZephyrRogue(this));
 
-        adventurersSpawned = new ArrayList<>(adventurers);
+        allAdventurers = new ArrayList<>(livingAdventurers);
     }
 
-    public ArrayList<Adventurer> getAdventurers() {
-        return adventurers;
+    public ArrayList<Adventurer> getLivingAdventurers() {
+        return new ArrayList<>(livingAdventurers);
+    }
+
+    public ArrayList<Adventurer> getAllAdventurers() {
+        return new ArrayList<>(allAdventurers);
     }
 
     public int getTotalTreasures() {
         int temp = 0;
-        for (Adventurer adventurer : adventurersSpawned)
+        for (Adventurer adventurer : allAdventurers)
             temp += adventurer.getNumTreasures();
 
         return temp;
@@ -45,7 +49,7 @@ public class AdventurerManager {
 
     public int getTotalValue() {
         int temp = 0;
-        for (Adventurer adventurer : adventurersSpawned)
+        for (Adventurer adventurer : allAdventurers)
             temp += adventurer.getTreasureValue();
 
         return temp;
@@ -96,7 +100,7 @@ public class AdventurerManager {
 
     public void Despawn(Adventurer adventurer, String floor, int[] location) {
         // Remove the adventurer from the list
-        adventurers.remove(adventurer);
+        livingAdventurers.remove(adventurer);
 
         // Decrement the counter for number of adventurers on floor
         Floor currentFloor = floorManager.getFloor(floor);
@@ -112,7 +116,7 @@ public class AdventurerManager {
     }
 
     public void reap() {
-        ArrayList<Adventurer> temp = new ArrayList<>(adventurers);
+        ArrayList<Adventurer> temp = new ArrayList<>(livingAdventurers);
 
         for (Adventurer adventurer : temp) {
             if (adventurer.getHealth() <= 0)

@@ -1,0 +1,2746 @@
+"C:\Program Files\Microsoft\jdk-21.0.0.35-hotspot\bin\java.exe" "-javaagent:E:\Programming\IntelliJ IDEA\lib\idea_rt.jar=62985:E:\Programming\IntelliJ IDEA\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath "E:\University Courses\CSCI 4448 - OO Design\project-3-arcane-owal7428\out\production\project-3-arcane-owal7428;C:\Users\Owen\.m2\repository\org\testng\testng\7.1.0\testng-7.1.0.jar;C:\Users\Owen\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\Owen\.m2\repository\com\google\inject\guice\4.1.0\guice-4.1.0-no_aop.jar;C:\Users\Owen\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\Owen\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Owen\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar;C:\Users\Owen\.m2\repository\org\yaml\snakeyaml\1.21\snakeyaml-1.21.jar;C:\Users\Owen\.m2\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\Users\Owen\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar" ooad.arcane.GameDriver
+----------Turn-1----------
+
+StartFloor:
++------------------------------+
+|             EK,MW,TV,ZR,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :A,A,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :A,A,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :T,            |             :T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 0 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 7 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 3 Health Remaining
+Aquarids - 4 remaining
+Fireborns - 4 remaining
+Terravores - 4 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 1
+
+Total Treasure Value: 0
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      5                                             0
+MistWalker         StartFloor: 0,0      3                                             0
+TerraVoyager       StartFloor: 0,0      7                                             0
+ZephyrRogue        StartFloor: 0,0      3                                             0
+
+Elemental Resonance:
+
+Elemental Discord:
+
+Total Active Creatures: 16
+Creatures          Room
+Aquarid            WaterFloor: 0,1
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Aquarid            WaterFloor: 0,1
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 2,0
+Aquarid            WaterFloor: 1,0
+Fireborn           FireFloor: 0,0
+Terravore          EarthFloor: 1,1
+Zephyral           AirFloor: 1,2
+Aquarid            WaterFloor: 1,0
+Fireborn           FireFloor: 1,0
+Terravore          EarthFloor: 1,0
+Zephyral           AirFloor: 0,2
+
+
+----------Turn-2----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:A,A,A,A,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :T,            |             ZR,:T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 0 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 3 Health Remaining
+Aquarids - 4 remaining
+Fireborns - 4 remaining
+Terravores - 4 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 2
+
+Total Treasure Value: 0
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 1,1       5                                             0
+MistWalker         AirFloor: 1,1        3                                             0
+TerraVoyager       WaterFloor: 1,1      5                                             0
+ZephyrRogue        EarthFloor: 1,1      3                                             0
+
+Elemental Resonance:
+EmberKnight
+
+Elemental Discord:
+MistWalker
+ZephyrRogue
+
+Total Active Creatures: 16
+Creatures          Room
+Aquarid            WaterFloor: 1,1
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Aquarid            WaterFloor: 1,1
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 2,0
+Aquarid            WaterFloor: 1,1
+Fireborn           FireFloor: 0,0
+Terravore          EarthFloor: 1,1
+Zephyral           AirFloor: 1,2
+Aquarid            WaterFloor: 1,1
+Fireborn           FireFloor: 1,0
+Terravore          EarthFloor: 1,0
+Zephyral           AirFloor: 0,2
+
+
+----------Turn-3----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,Z,
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             ZR,:T,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 0 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 3 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 3
+
+Total Treasure Value: 0
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 0,1       5                                             0
+MistWalker         AirFloor: 1,0        3                                             0
+TerraVoyager       WaterFloor: 1,1      5                                             0
+ZephyrRogue        EarthFloor: 1,0      1                                             0
+
+Elemental Resonance:
+EmberKnight
+
+Elemental Discord:
+MistWalker
+ZephyrRogue
+
+Total Active Creatures: 11
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 2,0
+Fireborn           FireFloor: 0,0
+Zephyral           AirFloor: 1,2
+Fireborn           FireFloor: 1,0
+Terravore          EarthFloor: 1,0
+Zephyral           AirFloor: 0,2
+
+
+----------Turn-4----------
+
+StartFloor:
++------------------------------+
+|             MW,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             EK,:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             ZR,:T,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 3 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 4
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 0,2       5          Portal                             1200
+MistWalker         StartFloor: 0,0      3                                             0
+TerraVoyager       WaterFloor: 0,1      5                                             0
+ZephyrRogue        EarthFloor: 1,0      1                                             0
+
+Elemental Resonance:
+EmberKnight
+
+Elemental Discord:
+ZephyrRogue
+
+Total Active Creatures: 11
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 1,0
+Fireborn           FireFloor: 0,0
+Zephyral           AirFloor: 1,1
+Fireborn           FireFloor: 1,0
+Terravore          EarthFloor: 1,0
+Zephyral           AirFloor: 0,1
+
+
+----------Turn-5----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             ZR,:T,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 3 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 5
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 0,1       5          Portal                             1200
+MistWalker         FireFloor: 1,1       3                                             0
+TerraVoyager       WaterFloor: 0,0      5                                             0
+ZephyrRogue        EarthFloor: 1,0      1                                             0
+
+Elemental Resonance:
+EmberKnight
+
+Elemental Discord:
+ZephyrRogue
+
+Total Active Creatures: 11
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 1,1
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 0,0
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 1,0
+Terravore          EarthFloor: 1,0
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-6----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             EK,MW,:            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 6
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 2,1       5          Portal                             1200
+MistWalker         FireFloor: 2,1       3                                             0
+TerraVoyager       WaterFloor: 0,1      5                                             0
+ZephyrRogue        EarthFloor: 1,0      1                                             0
+
+Elemental Resonance:
+EmberKnight
+
+Elemental Discord:
+ZephyrRogue
+
+Total Active Creatures: 10
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 1,2
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 0,0
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 1,0
+Zephyral           AirFloor: 2,1
+
+
+----------Turn-7----------
+
+StartFloor:
++------------------------------+
+|             EK,MW,ZR,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             TV,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 7
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      5          Portal                             1200
+MistWalker         StartFloor: 0,0      3                                             0
+TerraVoyager       WaterFloor: 0,2      5                                             0
+ZephyrRogue        StartFloor: 0,0      1                                             0
+
+Elemental Resonance:
+
+Elemental Discord:
+
+Total Active Creatures: 10
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 1,0
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-8----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,            |             :F,F,
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,ZR,:            |             TV,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 8
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 1,1      5          Portal                             1200
+MistWalker         AirFloor: 1,1        3                                             0
+TerraVoyager       WaterFloor: 1,2      5                                             0
+ZephyrRogue        WaterFloor: 1,1      1                                             0
+
+Elemental Resonance:
+
+Elemental Discord:
+EmberKnight
+MistWalker
+
+Total Active Creatures: 10
+Creatures          Room
+Fireborn           FireFloor: 2,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 2,1
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-9----------
+
+StartFloor:
++------------------------------+
+|             TV,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :F,            |             :F,
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 9
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 0,1      5          Portal                             1200
+MistWalker         AirFloor: 1,0        3                                             0
+TerraVoyager       StartFloor: 0,0      5                                             0
+ZephyrRogue        WaterFloor: 1,0      1                                             0
+
+Elemental Resonance:
+
+Elemental Discord:
+EmberKnight
+MistWalker
+
+Total Active Creatures: 10
+Creatures          Room
+Fireborn           FireFloor: 1,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 1,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 2,1
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 2,2
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-10----------
+
+StartFloor:
++------------------------------+
+|             MW,ZR,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 10
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        EarthFloor: 2,0      5          Portal                             1200
+MistWalker         StartFloor: 0,0      3                                             0
+TerraVoyager       AirFloor: 1,1        5                                             0
+ZephyrRogue        StartFloor: 0,0      1                                             0
+
+Elemental Resonance:
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 10
+Creatures          Room
+Fireborn           FireFloor: 0,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 0,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 2,2
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 1,2
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-11----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :F,F,            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :Z,            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:            |             TV,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 4 remaining
+
+
+Tracker: Turn 11
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        EarthFloor: 1,0      5          Portal                             1200
+MistWalker         WaterFloor: 1,1      3                                             0
+TerraVoyager       AirFloor: 1,2        5                                             0
+ZephyrRogue        AirFloor: 1,1        1                                             0
+
+Elemental Resonance:
+MistWalker
+ZephyrRogue
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 10
+Creatures          Room
+Fireborn           FireFloor: 0,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 0,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 1,2
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 0,2
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-12----------
+
+StartFloor:
++------------------------------+
+|             TV,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :F,            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             ZR,:            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 3 remaining
+
+
+Tracker: Turn 12
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 0,0      5          Portal                             1200
+MistWalker         WaterFloor: 0,1      3                                             0
+TerraVoyager       StartFloor: 0,0      5                                             0
+ZephyrRogue        AirFloor: 0,1        1                                             0
+
+Elemental Resonance:
+MistWalker
+ZephyrRogue
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 9
+Creatures          Room
+Fireborn           FireFloor: 0,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 0,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 0,2
+Fireborn           FireFloor: 0,1
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-13----------
+
+StartFloor:
++------------------------------+
+|             EK,MW,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 0 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 13
+
+Total Treasure Value: 1200
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      5          Portal                             1200
+MistWalker         StartFloor: 0,0      3                                             0
+TerraVoyager       AirFloor: 1,1        5                                             0
+ZephyrRogue        AirFloor: 0,0        1                                             0
+
+Elemental Resonance:
+ZephyrRogue
+
+Elemental Discord:
+
+Total Active Creatures: 8
+Creatures          Room
+Fireborn           FireFloor: 1,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 1,0
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 0,1
+Fireborn           FireFloor: 0,0
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-14----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 1 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 14
+
+Total Treasure Value: 2000
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        AirFloor: 1,1        5          Portal                             1200
+MistWalker         WaterFloor: 1,1      3          Armor                              800
+TerraVoyager       AirFloor: 0,1        5                                             0
+ZephyrRogue        AirFloor: 1,0        1                                             0
+
+Elemental Resonance:
+MistWalker
+ZephyrRogue
+
+Elemental Discord:
+
+Total Active Creatures: 8
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,0
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 0,0
+Fireborn           FireFloor: 1,0
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-15----------
+
+StartFloor:
++------------------------------+
+|             EK,ZR,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 1 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 15
+
+Total Treasure Value: 2000
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      5          Portal                             1200
+MistWalker         WaterFloor: 0,1      3          Armor                              800
+TerraVoyager       AirFloor: 0,0        5                                             0
+ZephyrRogue        StartFloor: 0,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 8
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-16----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             ZR,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 1 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 16
+
+Total Treasure Value: 3000
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        EarthFloor: 1,1      5          Portal                             1200
+MistWalker         WaterFloor: 0,0      3          Armor                              1800
+TerraVoyager       AirFloor: 0,1        5                                             0
+ZephyrRogue        FireFloor: 1,1       1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 8
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-17----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 2 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 17
+
+Total Treasure Value: 4100
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        EarthFloor: 1,0      5          Portal                             1200
+MistWalker         WaterFloor: 1,0      3          Armor, Gem                         2900
+TerraVoyager       AirFloor: 0,0        5                                             0
+ZephyrRogue        FireFloor: 0,1       1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 8
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-18----------
+
+StartFloor:
++------------------------------+
+|             EK,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 18
+
+Total Treasure Value: 4600
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      5          Portal                             1200
+MistWalker         WaterFloor: 2,0      3          Armor, Gem, Sword                  3400
+TerraVoyager       AirFloor: 1,0        5                                             0
+ZephyrRogue        FireFloor: 0,0       1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 8
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,2
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 2,2
+
+
+----------Turn-19----------
+
+StartFloor:
++------------------------------+
+|             TV,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 4 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 19
+
+Total Treasure Value: 5600
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 1,1       5          Portal                             1200
+MistWalker         WaterFloor: 1,0      3          Armor, Gem, Sword                  4400
+TerraVoyager       StartFloor: 0,0      5                                             0
+ZephyrRogue        FireFloor: 0,1       1                                             0
+
+Elemental Resonance:
+EmberKnight
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 8
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 1,2
+
+
+----------Turn-20----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             ZR,:
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :Z,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 20
+
+Total Treasure Value: 5600
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 1,0       5          Portal                             1200
+MistWalker         WaterFloor: 2,0      3          Armor, Gem, Sword                  4400
+TerraVoyager       WaterFloor: 1,1      5                                             0
+ZephyrRogue        FireFloor: 0,2       1                                             0
+
+Elemental Resonance:
+EmberKnight
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 7
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,0
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-21----------
+
+StartFloor:
++------------------------------+
+|             EK,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             TV,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 0 Treasure(s) - 5 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 21
+
+Total Treasure Value: 5600
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      5          Portal                             1200
+MistWalker         WaterFloor: 1,0      3          Armor, Gem, Sword                  4400
+TerraVoyager       WaterFloor: 1,2      5                                             0
+ZephyrRogue        FireFloor: 0,1       1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 7
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 0,1
+Fireborn           FireFloor: 2,1
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 0,1
+
+
+----------Turn-22----------
+
+StartFloor:
++------------------------------+
+|             MW,ZR,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :F,            |             :F,F,
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             TV,:
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :T,T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 5 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 1 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 2 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 22
+
+Total Treasure Value: 6100
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        EarthFloor: 1,1      5          Portal                             1200
+MistWalker         StartFloor: 0,0      3          Armor, Gem, Sword                  4400
+TerraVoyager       WaterFloor: 2,2      6          Potion                             500
+ZephyrRogue        StartFloor: 0,0      1                                             0
+
+Elemental Resonance:
+
+Elemental Discord:
+
+Total Active Creatures: 7
+Creatures          Room
+Fireborn           FireFloor: 2,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 1,1
+Fireborn           FireFloor: 2,2
+Terravore          EarthFloor: 0,1
+Fireborn           FireFloor: 2,1
+Zephyral           AirFloor: 0,2
+
+
+----------Turn-23----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             TV,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,:T,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 1 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 1 remaining
+Zephyrals - 2 remaining
+
+
+Tracker: Turn 23
+
+Total Treasure Value: 6100
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        EarthFloor: 0,1      1          Portal                             1200
+MistWalker         WaterFloor: 1,1      3          Armor, Gem, Sword                  4400
+TerraVoyager       WaterFloor: 1,2      6          Potion                             500
+ZephyrRogue        AirFloor: 1,1        1                                             0
+
+Elemental Resonance:
+MistWalker
+ZephyrRogue
+
+Elemental Discord:
+
+Total Active Creatures: 6
+Creatures          Room
+Fireborn           FireFloor: 1,2
+Terravore          EarthFloor: 0,1
+Zephyral           AirFloor: 1,1
+Fireborn           FireFloor: 1,2
+Fireborn           FireFloor: 2,2
+Zephyral           AirFloor: 0,2
+
+
+----------Turn-24----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             TV,:
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             ZR,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 1 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 24
+
+Total Treasure Value: 7100
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        EarthFloor: 0,1      1          Portal                             1200
+MistWalker         WaterFloor: 0,1      3          Armor, Gem, Sword                  4400
+TerraVoyager       WaterFloor: 2,2      6          Potion                             1500
+ZephyrRogue        AirFloor: 1,2        1                                             0
+
+Elemental Resonance:
+MistWalker
+ZephyrRogue
+
+Elemental Discord:
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 0,2
+Fireborn           FireFloor: 0,2
+Fireborn           FireFloor: 1,2
+Zephyral           AirFloor: 0,2
+
+
+----------Turn-25----------
+
+StartFloor:
++------------------------------+
+|             EK,ZR,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :F,F,            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 1 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 25
+
+Total Treasure Value: 7100
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      1          Portal                             1200
+MistWalker         WaterFloor: 0,0      3          Armor, Gem, Sword                  4400
+TerraVoyager       WaterFloor: 2,1      6          Potion                             1500
+ZephyrRogue        StartFloor: 0,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 0,1
+Fireborn           FireFloor: 0,1
+Fireborn           FireFloor: 0,2
+Zephyral           AirFloor: 1,2
+
+
+----------Turn-26----------
+
+StartFloor:
++------------------------------+
+|             TV,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :F,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,ZR,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :Z,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 1 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 26
+
+Total Treasure Value: 8100
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 1,1      1          Portal                             1200
+MistWalker         WaterFloor: 0,1      3          Armor, Gem, Sword                  5400
+TerraVoyager       StartFloor: 0,0      6          Potion                             1500
+ZephyrRogue        WaterFloor: 1,1      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 0,0
+Fireborn           FireFloor: 0,0
+Fireborn           FireFloor: 0,1
+Zephyral           AirFloor: 0,2
+
+
+----------Turn-27----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             MW,:
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 3 Treasure(s) - 3 Health Remaining
+TerraVoyager - 2 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 27
+
+Total Treasure Value: 9300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 1,0      1          Portal                             1200
+MistWalker         WaterFloor: 0,2      3          Armor, Gem, Sword                  5400
+TerraVoyager       WaterFloor: 1,1      6          Potion, Gem                        2700
+ZephyrRogue        WaterFloor: 2,1      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 0,0
+Zephyral           AirFloor: 0,1
+
+
+----------Turn-28----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             MW,:
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 2 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 28
+
+Total Treasure Value: 10500
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 0,0      1          Portal                             1200
+MistWalker         WaterFloor: 1,2      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       WaterFloor: 1,0      6          Potion, Gem                        2700
+ZephyrRogue        WaterFloor: 2,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Fireborn           FireFloor: 2,0
+Fireborn           FireFloor: 1,0
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-29----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :F,F,            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             EK,:            |             MW,:
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             TV,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 2 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 29
+
+Total Treasure Value: 10500
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 0,1      1          Portal                             1200
+MistWalker         WaterFloor: 0,2      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,2        6          Potion, Gem                        2700
+ZephyrRogue        WaterFloor: 1,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 2,1
+Fireborn           FireFloor: 2,1
+Fireborn           FireFloor: 2,0
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-30----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :F,            |             :F,F,
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             EK,ZR,:            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 30
+
+Total Treasure Value: 11300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 0,0      1          Portal                             1200
+MistWalker         WaterFloor: 0,1      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,1        6          Potion, Gem, Portal                3500
+ZephyrRogue        WaterFloor: 0,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 2,2
+Fireborn           FireFloor: 2,2
+Fireborn           FireFloor: 2,1
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-31----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             EK,ZR,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 31
+
+Total Treasure Value: 12300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 1,0      1          Portal                             1200
+MistWalker         WaterFloor: 0,0      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,0        6          Potion, Gem, Portal                4500
+ZephyrRogue        WaterFloor: 1,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 1,2
+Fireborn           FireFloor: 1,2
+Fireborn           FireFloor: 2,2
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-32----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             EK,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 32
+
+Total Treasure Value: 12300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 0,0      1          Portal                             1200
+MistWalker         EarthFloor: 2,1      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,1        6          Potion, Gem, Portal                4500
+ZephyrRogue        WaterFloor: 2,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 0,2
+Fireborn           FireFloor: 0,2
+Fireborn           FireFloor: 1,2
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-33----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :F,F,            |             :F,
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             EK,ZR,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 33
+
+Total Treasure Value: 13300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        WaterFloor: 1,0      1          Portal                             1200
+MistWalker         EarthFloor: 2,0      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,0        6          Potion, Gem, Portal                5500
+ZephyrRogue        WaterFloor: 1,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+EmberKnight
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 0,1
+Fireborn           FireFloor: 0,1
+Fireborn           FireFloor: 0,2
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-34----------
+
+StartFloor:
++------------------------------+
+|             EK,:-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :F,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             ZR,:            |             :            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 34
+
+Total Treasure Value: 13300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        StartFloor: 0,0      1          Portal                             1200
+MistWalker         EarthFloor: 1,0      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 1,0        6          Potion, Gem, Portal                5500
+ZephyrRogue        WaterFloor: 2,0      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 0,0
+Fireborn           FireFloor: 0,0
+Fireborn           FireFloor: 0,1
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-35----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             TV,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             EK,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             MW,:            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 35
+
+Total Treasure Value: 13300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        AirFloor: 1,2        1          Portal                             1200
+MistWalker         EarthFloor: 0,0      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,0        6          Potion, Gem, Portal                5500
+ZephyrRogue        WaterFloor: 2,1      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 1,0
+Fireborn           FireFloor: 0,0
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-36----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             :            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             MW,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             ZR,:
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             TV,:            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             EK,:
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 36
+
+Total Treasure Value: 13300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        AirFloor: 2,2        1          Portal                             1200
+MistWalker         WaterFloor: 0,1      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,1        6          Potion, Gem, Portal                5500
+ZephyrRogue        WaterFloor: 2,2      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Fireborn           FireFloor: 2,0
+Fireborn           FireFloor: 1,0
+Zephyral           AirFloor: 1,1
+
+
+----------Turn-37----------
+
+StartFloor:
++------------------------------+
+|             :-
++------------------------------+
+
+FireFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :F,F,            |             EK,:            |             :
+WaterFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             MW,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             ZR,:            |             :
+AirFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             TV,:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :Z,            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+EarthFloor:
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
++------------------------------+------------------------------+------------------------------+
+|             :            |             :            |             :
+
+EmberKnight - 1 Treasure(s) - 1 Health Remaining
+MistWalker - 4 Treasure(s) - 3 Health Remaining
+TerraVoyager - 3 Treasure(s) - 6 Health Remaining
+ZephyrRogue - 0 Treasure(s) - 1 Health Remaining
+Aquarids - 0 remaining
+Fireborns - 3 remaining
+Terravores - 0 remaining
+Zephyrals - 1 remaining
+
+
+Tracker: Turn 37
+
+Total Treasure Value: 13300
+
+Total Active Adventurers: 4
+Adventurers        Room                 Health     Treasure                           Value
+EmberKnight        FireFloor: 2,1       1          Portal                             1200
+MistWalker         WaterFloor: 0,2      3          Armor, Gem, Sword, Elixir          6600
+TerraVoyager       AirFloor: 0,2        6          Potion, Gem, Portal                5500
+ZephyrRogue        WaterFloor: 2,1      1                                             0
+
+Elemental Resonance:
+MistWalker
+
+Elemental Discord:
+
+Total Active Creatures: 4
+Creatures          Room
+Fireborn           FireFloor: 2,0
+Fireborn           FireFloor: 2,0
+Fireborn           FireFloor: 1,0
+Zephyral           AirFloor: 1,1
+
+
+...
+Adventurers won ... Treasures worth 15000 found
+
+...
+Game Finished.
+
+Process finished with exit code 0

@@ -2,9 +2,9 @@ package ooad.arcane.Adventurer.Behaviors;
 
 import ooad.arcane.Adventurer.Adventurer;
 import ooad.arcane.Creature.Creature;
-import ooad.arcane.Manager.AdventurerManager;
 
+/* Interface used in strategy pattern. The classes that inherit from this
+* are the concrete behaviors. */
 public interface CombatBehavior {
-    public int Fight(Adventurer adventurer, Creature creature,
-                     int attack, float dodge, int damage);
+    int Fight(Adventurer adventurer, Creature creature, int attack, float dodge, int damage);
 }

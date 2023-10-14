@@ -10,7 +10,7 @@ import ooad.arcane.Floor.Floor;
 import ooad.arcane.Floor.Room;
 
 public class CreatureManager {
-    public final ArrayList<Creature> livingCreatures = new ArrayList<>();
+    private final ArrayList<Creature> livingCreatures = new ArrayList<>();
 
     private AdventurerManager adventurerManager;
     private final FloorManager floorManager;
@@ -33,10 +33,6 @@ public class CreatureManager {
     // This is necessary in order for CreatureManager and AdventureManager to be instantiated
     public void setAdventurerManager(AdventurerManager adventurerManager) {
         this.adventurerManager = adventurerManager;
-    }
-
-    public void addCreatures(Creature creature) {
-        livingCreatures.add(creature);
     }
 
     public ArrayList<Creature> getLivingCreatures() {

@@ -5,6 +5,7 @@ import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Fireborns extends Creature {
 
@@ -29,6 +30,8 @@ public class Fireborns extends Creature {
         this.location = new int[]{x,y};
 
         manager.spawnInitRoom(this, floor, location);
+
+        notifyObservers(getType(this) + " has spawned at " + floor + ": " + Arrays.toString(location) + ".");
     }
 
     // fireborns move clockwise
@@ -69,6 +72,9 @@ public class Fireborns extends Creature {
         manager.updateRoomAndFloorLists(this, floor, location, newLocation);
 
         this.location = newLocation;
+
+        notifyObservers(getType(this) + " moved to " + floor + ": "
+                + Arrays.toString(location) + ".");
     }
 
 }

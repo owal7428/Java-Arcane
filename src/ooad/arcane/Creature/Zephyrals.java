@@ -5,6 +5,7 @@ import ooad.arcane.Manager.CreatureManager;
 import ooad.arcane.Utility.Dice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Zephyrals extends Creature {
 
@@ -28,6 +29,9 @@ public class Zephyrals extends Creature {
         manager.updateRoomAndFloorLists(this, floor, location, newLocation);
 
         this.location = newLocation;
+
+        notifyObservers(getType(this) + " moved to " + floor + ": "
+                + Arrays.toString(location) + ".");
     }
 
 }

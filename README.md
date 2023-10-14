@@ -3,7 +3,6 @@
 
 Team Members:
 1. Owen Allison
-2. Sriyans Pattanaik
 
 Java Version: OpenJDK 21
 

@@ -15,6 +15,8 @@ public class NoviceCombat implements CombatBehavior {
         // Check which won the dice roll
         if (attack > creatureAttack) {
             creature.isDead = true;
+            creature.notifyObservers(creature.getType(creature) + " has lost combat to "
+                + creature.getType(adventurer) + ".");
             adventurer.UpgradeCombat();
         }
         else if (attack < creatureAttack) {
@@ -25,6 +27,9 @@ public class NoviceCombat implements CombatBehavior {
 
             if (dodgeRoll > dodge * 100)
                 damageTaken += damage;
+
+            adventurer.notifyObservers(adventurer.getType(adventurer) + " has lost combat to "
+                    + creature.getType(creature) + ".");
         }
 
         return damageTaken;

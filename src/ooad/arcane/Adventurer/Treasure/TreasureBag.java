@@ -1,11 +1,9 @@
 package ooad.arcane.Adventurer.Treasure;
 
-import ooad.arcane.Adventurer.Adventurer;
-import ooad.arcane.Creature.Creature;
-
 import java.util.ArrayList;
 import java.util.List;
 
+// Concrete component of the decorator pattern
 public class TreasureBag implements Treasure {
     @Override
     public List<String> getTreasures() {

@@ -1,0 +1,11 @@
+EmberKnight moved to FireFloor: [1, 0].
+EmberKnight is now fighting Fireborn.
+Fireborn has lost combat to EmberKnight.
+EmberKnight has upgraded combat.
+EmberKnight has lost 0 health; it now has 5 left.
+MistWalker moved to WaterFloor: [2, 0].
+TerraVoyager moved to StartFloor: [-1, 0].
+TerraVoyager moved to WaterFloor: [1, 1].
+ZephyrRogue moved to FireFloor: [0, 2].
+Zephyral moved to AirFloor: [0, 0].
+Zephyral moved to AirFloor: [1, 1].

@@ -1,7 +1,6 @@
 package ooad.test;
 
 import ooad.arcane.Adventurer.Adventurer;
-import ooad.arcane.Adventurer.EmberKnight;
 import ooad.arcane.Adventurer.Treasure.Decorators.*;
 import ooad.arcane.Adventurer.Treasure.Treasure;
 import ooad.arcane.Adventurer.Treasure.TreasureBag;
@@ -49,7 +48,7 @@ public class DecoratorTest {
 
         creatureManager.setAdventurerManager(adventurerManager);
 
-        Adventurer emberKnight = adventurerManager.getAdventurers().get(0);
+        Adventurer emberKnight = adventurerManager.getAllAdventurers().get(0);
 
         for (int i = 0; i < 20; i++)
             emberKnight.Turn();
