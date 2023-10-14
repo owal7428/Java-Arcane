@@ -402,6 +402,8 @@ public abstract class Adventurer implements Subject {
 
         StringBuilder temp = new StringBuilder();
 
+        /* Loop through the list of all treasures and add their type to string.
+        * Do not add the comma when at the end of the list. */
         for (int i = 0; i < size; i++) {
             temp.append(treasures.get(i));
             if (i != size - 1)
@@ -409,5 +411,13 @@ public abstract class Adventurer implements Subject {
         }
 
         return temp.toString();
+    }
+
+    public boolean getHasResonance() {
+        return hasResonance;
+    }
+
+    public boolean getHasDiscord() {
+        return hasDiscord;
     }
 }

@@ -10,7 +10,7 @@ public class GameDriver {
 
         boolean shouldRender = false;
 
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 30; i++) {
             GameEngine engine = new GameEngine(shouldRender);
             int winner = engine.Simulate();
 

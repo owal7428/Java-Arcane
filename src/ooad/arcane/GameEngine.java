@@ -71,7 +71,7 @@ public class GameEngine implements Subject {
             turn++;
 
             if (shouldRender)
-                renderer.Render(turn, floorManager);
+                renderer.Render(turn, floorManager, adventurerManager, creatureManager);
 
             // Reset values
             numTreasures = 0;
@@ -96,7 +96,8 @@ public class GameEngine implements Subject {
                 creature.Turn();
             }
 
-            logger.writeEvents(turn);
+            if (shouldRender)
+                logger.writeEvents(turn);
         }
 
         System.out.println("...");

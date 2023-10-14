@@ -22,7 +22,7 @@ public interface Subject {
             case Aquarids ignored -> "Aquarid";
             case Fireborns ignored -> "Fireborn";
             case Terravores ignored -> "Terravore";
-            case Zephyrals ignored -> "Zephyrals";
+            case Zephyrals ignored -> "Zephyral";
             default -> throw new IllegalStateException("Unexpected value: " + subject);
         };
     }
