@@ -1,0 +1,4 @@
+The only thing that actually deviated from the original UML diagram when implementing was the observer pattern.
+I initially didn't have an interface for the subject, but that is something that I did in the end implement because it
+made the code more organized and a bit simpler than it otherwise would've been. Besides that, basically everything else stayed
+the same as the original UML diagram.
