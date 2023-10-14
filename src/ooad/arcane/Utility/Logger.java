@@ -9,8 +9,8 @@ public class Logger implements Observer {
 
         // Wrap file i/o in try catch block to avoid errors
         try (FileWriter writer = new FileWriter(filename)) {
-            for (String event : events)
-                writer.write(event);
+            while (!events.isEmpty())
+                writer.write(events.remove());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
