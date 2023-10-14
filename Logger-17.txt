@@ -1,0 +1,6 @@
+EmberKnight moved to EarthFloor: [1, 0].
+MistWalker moved to WaterFloor: [1, 0].
+MistWalker has found a(n) Sword.
+MistWalker has upgraded search.
+TerraVoyager moved to AirFloor: [0, 0].
+ZephyrRogue moved to FireFloor: [0, 1].

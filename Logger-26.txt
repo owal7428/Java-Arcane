@@ -1,0 +1,13 @@
+EmberKnight moved to StartFloor: [-1, 0].
+EmberKnight moved to WaterFloor: [1, 1].
+EmberKnight has water discord.
+MistWalker moved to WaterFloor: [0, 1].
+MistWalker has found a(n) Gem.
+MistWalker has upgraded search.
+TerraVoyager moved to WaterFloor: [1, 1].
+ZephyrRogue moved to StartFloor: [-1, 0].
+ZephyrRogue moved to WaterFloor: [1, 1].
+Fireborn moved to FireFloor: [0, 0].
+Fireborn moved to FireFloor: [0, 0].
+Fireborn moved to FireFloor: [0, 1].
+Zephyral moved to AirFloor: [0, 2].
