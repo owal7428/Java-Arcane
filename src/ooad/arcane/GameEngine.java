@@ -25,12 +25,12 @@ public class GameEngine implements Subject {
     AdventurerManager adventurerManager = new AdventurerManager(creatureManager, floorManager);
     GameBoard renderer = new GameBoard();
 
+    Logger logger = new Logger();
+    Tracker tracker = new Tracker();
+
     public GameEngine(boolean shouldRender) {
         this.shouldRender = shouldRender;
         creatureManager.setAdventurerManager(adventurerManager);
-
-        Observer logger = new Logger();
-        Observer tracker = new Tracker();
 
         addObserver(logger);
         addObserver(tracker);
@@ -72,6 +72,8 @@ public class GameEngine implements Subject {
                 numCreatures++;
                 creature.Turn();
             }
+
+            logger.writeEvents(turn);
         }
 
         System.out.println("...");
