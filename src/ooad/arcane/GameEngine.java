@@ -37,7 +37,7 @@ public class GameEngine implements Subject {
         addObserver(logger);
         addObserver(tracker);
 
-        for (Adventurer adventurer : adventurerManager.getAdventurers()) {
+        for (Adventurer adventurer : adventurerManager.getAllAdventurers()) {
             adventurer.addObserver(logger);
             adventurer.addObserver(tracker);
         }
@@ -79,7 +79,7 @@ public class GameEngine implements Subject {
             numCreatures = 0;
             numAdventurers = 0;
 
-            ArrayList<Adventurer> adventurers = adventurerManager.getAdventurers();
+            ArrayList<Adventurer> adventurers = adventurerManager.getLivingAdventurers();
 
             for (Adventurer adventurer : adventurers) {
                 numAdventurers++;

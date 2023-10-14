@@ -91,7 +91,7 @@ public class GameBoard {
         System.out.println();
         System.out.println();
 
-        for (Adventurer adventurer : adventurerManager.getAdventurers()) {
+        for (Adventurer adventurer : adventurerManager.getAllAdventurers()) {
             String name = adventurer.getType(adventurer);
             System.out.println(name + " - " + adventurer.getNumTreasures() + " Treasure(s) - "
                     + adventurer.getHealth() + " Health Remaining");

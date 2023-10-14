@@ -49,7 +49,7 @@ public class DecoratorTest {
 
         creatureManager.setAdventurerManager(adventurerManager);
 
-        Adventurer emberKnight = adventurerManager.getAdventurers().get(0);
+        Adventurer emberKnight = adventurerManager.getAllAdventurers().get(0);
 
         for (int i = 0; i < 20; i++)
             emberKnight.Turn();

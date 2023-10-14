@@ -377,7 +377,10 @@ public abstract class Adventurer implements Subject {
     }
 
     public int getHealth() {
-        return health + healthBuff;
+        int totalHealth = health + healthBuff;
+
+        // If totalHealth is less than 0, return 0. Else, return totalHealth
+        return Math.max(0, totalHealth);
     }
 
     public String getFloor() {
